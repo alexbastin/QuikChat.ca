@@ -49,17 +49,17 @@
         
 		<div class="page" id="page-home">
 			<!-- Blueprint header -->
-			<header class="bp-header cf">
-				<span class="bp-header__present">Blueprint <span class="bp-tooltip bp-icon bp-icon--about" data-content="The Blueprints are a collection of basic and minimal website concepts, components, plugins and layouts with minimal style for easy adaption and usage, or simply for inspiration."></span></span>
-				<h1 class="bp-header__title">Page Stack Navigation</h1>
-				<p class="bp-header__desc">Based on Ilya Kostin's Dribbble shot <a href="https://dribbble.com/shots/2286042-Stacked-navigation">Stacked navigation</a></p>
-				<nav class="bp-nav">
-					<a class="bp-nav__item bp-icon bp-icon--prev" href="http://tympanus.net/Blueprints/ZoomSlider/" data-info="previous Blueprint"><span>Previous Blueprint</span></a>
-					<!--a class="bp-nav__item bp-icon bp-icon--next" href="" data-info="next Blueprint"><span>Next Blueprint</span></a-->
-					<a class="bp-nav__item bp-icon bp-icon--drop" href="http://tympanus.net/codrops/?p=25311" data-info="back to the Codrops article"><span>back to the Codrops article</span></a>
-					<a class="bp-nav__item bp-icon bp-icon--archive" href="http://tympanus.net/codrops/category/blueprints/" data-info="Blueprints archive"><span>Go to the archive</span></a>
-				</nav>
-			</header>
+
+            
+            <h1 class="homeTitle">QuikChat</h1>
+            
+            <div class="line">__________________________________________________</div>
+            
+            <div class="littleDesc"><p>QuikChat was created to enable fast communication in the form of texting and video calls. The entire service is free to use to enjoy. You may navigate our several pages using the icon in the top left corner</p></div>
+            
+       
+            
+            
 		</div>
         
         
@@ -88,13 +88,13 @@
         
         
 		<div class="page" id="page-collective">
-			<header class="bp-header cf">
-				<h1 class="bp-header__title">Manuals</h1>
-				<p class="bp-header__desc">Based on Ilya Kostin's Dribbble shot <a href="https://dribbble.com/shots/2286042-Stacked-navigation">Stacked navigation</a></p>
-				<p class="info">
-					"When you adopt a vegan diet we make a connection, you don't go back, it is not a diet, it is a lifestyle." &mdash; Freelee Frugivore
-				</p>
-			</header>
+			
+            <h1 class="collectiveTitle">Collective Chat</h1>
+            <h3 class="collectiveDesc">Collective chat allows you to chat with everyone else in this group</h3>
+            
+            
+            
+            
 		</div>
         
         <!-- collective -->
@@ -242,6 +242,60 @@
     
 <style>
     
+    
+    
+    
+    
+    
+    
+/* HOME PAGE */    
+    
+    
+    .homeTitle {
+        position: absolute;
+        top: 10%;
+        left: 40%;
+        align-content: center;
+        font-size: 4em;
+        z-index: 999;
+    }
+    
+    div.line {
+        width: 70%;
+        height: 3%;
+        color: #272727;
+        position: absolute;
+        left: 38.25%;
+        top: 25%;
+    }
+    
+     .collectiveTitle {
+        position: absolute;
+        top: 10%;
+        left: 34%;
+        align-content: center;
+        font-size: 4em;
+    }
+    
+     .collectiveDesc {
+        position: absolute;
+        top: 20%;
+        left: 33%;
+        align-content: center;
+        font-size: 1em;
+    }
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     /* General Blueprint Style */
 /* Resets */
 *,
@@ -261,8 +315,8 @@
 /* Main styles */
  @import url('https://fonts.googleapis.com/css?family=Comfortaa:400,500,600,700|Nunito+Sans:400,600,700,800,900');
 body {
-	font-family: 'Nunito Sans', 'Comfortaa', sans-serif;
-	margin: 0;
+	font-family: 'Comfortaa', sans-serif;
+    margin: 0;
 	color: #272727;
 	background: #90d1a7;
 	-webkit-font-smoothing: antialiased;
@@ -733,7 +787,19 @@ a:hover {
     color: white;
     }
     
-    
+    * {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+}
+
+html, body {
+  min-height: 100%;
+}
+
+
+
+
     
     
     
