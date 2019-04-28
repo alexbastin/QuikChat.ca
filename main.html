@@ -13,7 +13,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Comfortaa|Nunito+Sans" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/demo.css" />
 	<link rel="stylesheet" type="text/css" href="css/component.css" />
-    <script src='https://cdn.scaledrone.com/scaledrone.min.js'></script>
+    	<script type='text/javascript' src='https://cdn.scaledrone.com/scaledrone.min.js'></script>
 
     <script src="script.js"></script>
 	<script src="js/modernizr-custom.js"></script>
@@ -166,15 +166,38 @@
         
         
 		<div class="page" id="page-video">
-            
-            
-            <div class="copy">Send your URL to a friend to start a video call</div>
-                <video id="localVideo" autoplay muted></video>
-                <video id="remoteVideo" autoplay></video>
-            <script src="script.js"></script>
-             <video id="localVideo" autoplay muted></video>
-                <video id="remoteVideo" autoplay></video>
-            <script src="script.js"></script>
+            <body1>
+    
+   
+    
+  <div class="copy">Share your URL with anyone to talk to them</div>
+    
+    
+    
+<input type="hidden" id="input-url" value="URL has been copied!">
+    <button class="btn fourth posleft">Copy my URL</button>
+    
+    
+    <a class="js-emaillink" href="mailto:yourfriendsemail@here.com?&subject=Invite to join my Video Chat on QuikChat.ca&body=Hey Friend,%0d%0a%0d%0aCome and join me on a Video Chat by clicking this link: (Paste your link here!)%0d%0a%0d%0aSee you there!">
+        <button class="btn fourth posright">Send to a friend</button>
+    </a>
+    
+    
+    
+    
+    
+  <video id="localVideo" autoplay muted></video>
+    <video id="remoteVideo" autoplay></video>
+  <script src="script.js"></script>
+    
+    
+     
+   
+   
+    
+    </body1>
+    
+
             
             
 		</div>
@@ -323,7 +346,112 @@
 	    top: 400px;
     }
 
+    body1 {
+      display: flex;
+
+      margin: 0;
+      align-items: center;
+      justify-content: center;
+      padding: 0 50px;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+          font-size: 1em;
+    }
+      
+    video {
+        width: 40%; 
+        height: 52%; 
+        margin: 0 50px;
+        box-sizing: border-box;
+        border-radius: 20px;
+        padding: 0;
+        border: 3px solid #90ee90;
+        box-shadow: rgba(156, 172, 172, 0.2) 0px 2px 2px, rgba(156, 172, 172, 0.2) 0px 4px 4px, rgba(156, 172, 172, 0.2) 0px 8px 8px, rgba(156, 172, 172, 0.2) 0px 16px 16px, rgba(156, 172, 172, 0.2) 0px 32px 32px, rgba(156, 172, 172, 0.2) 0px 64px 64px;
+    }
+      
+      
+      
+      #localVideo {
+          position: absolute;
+          top: 19%;
+          left: 3.1%;
+      }
+      
+        #remoteVideo {
+          position: absolute;
+          top: 19%;
+          left: 50%;
+      }
+        
     
+    }
+    .copy {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 6em;
+      color: rgba(0, 0, 0, 0.5);
+    }
+      
+      
+      .btn {
+          box-sizing: border-box;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          background-color: transparent;
+          border: 2px solid #90ee90;
+          border-radius: 2em;
+          color: #90ee90;
+          cursor: pointer;
+          display: flex;
+          align-self: center;  
+          font-weight: 900;
+          font-size: 1.2em;
+          line-height: 1;
+          font-family: 'Comfortaa', sans-serif;
+          margin: 20px;
+          padding: 0.3em 2.7em;
+          text-decoration: none;
+          text-align: center;
+          font-family: 'Comfortaa', sans-serif;
+          position: absolute;
+          z-index: 999;
+          text-decoration: none;
+          
+      }
+      
+      .btn:hover, .btn:focus {
+          color: #90ee90;
+          outline: 0;
+          text-decoration: none;
+      } 
+      
+      .fourth {
+          border-color: #90ee90;
+          color: #90ee90;
+          background-image: linear-gradient(120deg, #90ee90 50%, transparent 50%);
+          background-position: 100%;
+          background-size: 400%;
+          transition: background 600ms ease-in-out;
+      }
+      
+      .fourth:hover {
+          background-position: 0;
+          color: #f8f7ff;
+      }    
+      
+      .posleft {
+          top: 75%;
+          left: 16.2%;
+      }
+      
+      .posright {
+          top: 75%;
+          left: 62.9%;
+      }
+            
+      
     
     
     
