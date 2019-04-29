@@ -13,7 +13,11 @@
 	<link href="https://fonts.googleapis.com/css?family=Comfortaa|Nunito+Sans" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/demo.css" />
 	<link rel="stylesheet" type="text/css" href="css/component.css" />
-    <script src='https://cdn.scaledrone.com/scaledrone.min.js'></script>
+
+    <script type='text/javascript' src='https://cdn.scaledrone.com/scaledrone.min.js'></script>
+
+    <script src="js/script.js"></script>
+
 	<script src="js/modernizr-custom.js"></script>
 </head>
 
@@ -24,7 +28,7 @@
 		<div class="pages-nav__item"><a class="link link--page" href="#page-pro">Profile</a></div>
 		<div class="pages-nav__item"><a class="link link--page" href="#page-collective">Collective Chat</a></div>
 		<div class="pages-nav__item"><a class="link link--page" href="#page-discover">Discover</a></div>
-		<div class="pages-nav__item"><a class="link link--page" href="#page-private">Private Chat (In Development)</a></div>
+		<div class="pages-nav__item"><a class="link link--page" href="#page-private">Private Chat</a></div>
 		<div class="pages-nav__item"><a class="link link--page" href="#page-video">Video Chat</a></div>
 		<div class="pages-nav__item pages-nav__item--small"><a class="link link--page link--faded" href="#page-about">About</a></div>
 		<div class="pages-nav__item pages-nav__item--small"><a class="link link--page link--faded" href="#page-contact">Contact</a></div>
@@ -172,6 +176,13 @@
         <br>
         
         </div>
+        
+		<div class="page" id="page-pro">
+    <h1 class="bigTitle">Your Profile</h1>
+    <h3 class="bigDesc">Edit your profile here to better represent the awesome person you are!</h3>
+    <hr class="headerBreak">
+		</div>
+
 
         <!-- profile -->
         
@@ -179,6 +190,13 @@
         
         
 		<div class="page" id="page-collective">
+
+			
+   
+ 			<h1 class="bigTitle">Collective Chat</h1>
+    				<h3 class="bigDesc">Enter the QuikChat Collective Chat to interact with the Quikchat by sharing ideas, comments, or anything else</h3>
+   		 <hr class="headerBreak">
+		
             
 <br>
 <br>
@@ -220,6 +238,9 @@
         
 		<div class="page" id="page-discover">
 
+ 			<h1 class="bigTitle">Discover</h1>
+    				<h3 class="bigDesc">Browse the Discover page to explore what's popular among the QuikChat community</h3>
+   		 <hr class="headerBreak">
 		</div>
         
         <!-- discover -->
@@ -228,23 +249,17 @@
         
         
 		<div class="page" id="page-private">
+			
+            <h1 class="bigTitle">Private Chat</h1>
+    <h3 class="bigDesc">Private chat allows you to have undisturbed conversiations with friends, family, or anyone else. Note Private Chat is still in development... </h3>
+    <hr class="headerBreak">
+            
+            
             
 		</div>
         
-        <!-- private chat -->
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         <!-- video chat -->
-        
-        
+
 		<div class="page" id="page-video">
             
             <br>
@@ -254,6 +269,35 @@
             <p class="copy" style="color: black; top: 5%;">Send your URL to a friend to start a video call</p>
 
 		    </div>
+            <body1>
+    
+   <h1 class="bigTitle">Video Chat</h1>
+    <h3 class="bigDesc">Video Chat allows to interact with friends, family, or anyone else in a more personal manner</h3>
+    <hr class="headerBreak">
+    
+<input type="hidden" id="input-url" value="URL has been copied!">
+    <button class="btn fourth posleft">Copy my URL</button>
+
+    <a class="js-emaillink" href="mailto:yourfriendsemail@here.com?&subject=Invite to join my Video Chat on QuikChat.ca&body=Hey Friend,%0d%0a%0d%0aCome and join me on a Video Chat by clicking this link: (Paste your link here!)%0d%0a%0d%0aSee you there!">
+        <button class="btn fourth posright">Send to a friend</button>
+    </a>
+
+  <video id="localVideo" autoplay muted></video>
+    <video id="remoteVideo" autoplay></video>
+  <script src="js/script.js"></script>
+    
+    
+     
+   
+   
+    
+    </body1>
+    
+
+            
+            
+		</div>
+>>>>>>> fed5509d4aae27a1fbc7ac07ba2c847ea0e0810d
         
         <!-- video chat -->
         
@@ -272,7 +316,13 @@
         
         
 		<div class="page" id="page-about">
+<<<<<<< HEAD
 
+=======
+			<h1 class="bigTitle">About QuikChat</h1>
+    <h3 class="bigDesc">Learn more about this student-run startup that is on track to drastically improve modern communication</h3>
+    <hr class="headerBreak">
+>>>>>>> fed5509d4aae27a1fbc7ac07ba2c847ea0e0810d
 		</div>
         
         <!-- about us -->
@@ -281,7 +331,13 @@
         
         
 		<div class="page" id="page-contact">
+<<<<<<< HEAD
 
+=======
+			<h1 class="bigTitle">Contact Us</h1>
+    <h3 class="bigDesc">Feel free to contact QuikChat anytime to discuss suggestions, issues, or anything else </h3>
+    <hr class="headerBreak">
+>>>>>>> fed5509d4aae27a1fbc7ac07ba2c847ea0e0810d
 		</div>
         
         <!-- contact -->
@@ -290,7 +346,13 @@
         
         
 		<div class="page" id="page-employment">
+<<<<<<< HEAD
 
+=======
+			<h1 class="bigTitle">Employment</h1>
+    <h3 class="bigDesc">Become part of one of Canada's fastest growing startups and work among other high-achieving, like-minded individuals in an amazing workplace on Toronto's own waterfront</h3>
+    <hr class="headerBreak">
+>>>>>>> fed5509d4aae27a1fbc7ac07ba2c847ea0e0810d
 		</div>
         
         <!-- employment -->
@@ -356,6 +418,7 @@
         top: 10%;
     }
 
+<<<<<<< HEAD
     #mytweets {
 
     }
@@ -369,16 +432,161 @@
     #info {
         margin-left: 200px;
     }
+=======
+    body1 {
+      display: flex;
+
+      margin: 0;
+      align-items: center;
+      justify-content: center;
+      padding: 0 50px;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+          font-size: 1em;
+    }
+      
+    video {
+        width: 40%; 
+        margin: 0 50px;
+        box-sizing: border-box;
+        border-radius: 2em;
+        padding: 0;
+        border: 3px solid #90ee90;
+        box-shadow: rgba(156, 172, 172, 0.2) 0px 2px 2px, rgba(156, 172, 172, 0.2) 0px 4px 4px, rgba(156, 172, 172, 0.2) 0px 8px 8px, rgba(156, 172, 172, 0.2) 0px 16px 16px, rgba(156, 172, 172, 0.2) 0px 32px 32px, rgba(156, 172, 172, 0.2) 0px 64px 64px;
+    }
+      
+      
+      
+      #localVideo {
+          position: absolute;
+          top: 19%;
+          left: 3.1%;
+      }
+      
+        #remoteVideo {
+          position: absolute;
+          top: 19%;
+          left: 50%;
+      }
+        
+>>>>>>> fed5509d4aae27a1fbc7ac07ba2c847ea0e0810d
     
+    }
+    .copy {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 6em;
+      color: rgba(0, 0, 0, 0.5);
+    }
+      
+      
+      .btn {
+          box-sizing: border-box;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          background-color: transparent;
+          border: 2px solid #90ee90;
+          border-radius: 2em;
+          color: #90ee90;
+          cursor: pointer;
+          display: flex;
+          align-self: center;  
+          font-weight: 900;
+          font-size: 1.2em;
+          line-height: 1;
+          font-family: 'Comfortaa', sans-serif;
+          margin: 20px;
+          padding: 0.3em 2.7em;
+          text-decoration: none;
+          text-align: center;
+          font-family: 'Comfortaa', sans-serif;
+          position: absolute;
+          z-index: 999;
+          text-decoration: none;
+          
+      }
+      
+      .btn:hover, .btn:focus {
+          color: #90ee90;
+          outline: 0;
+          text-decoration: none;
+      } 
+      
+      .fourth {
+          border-color: #90ee90;
+          color: #90ee90;
+          background-image: linear-gradient(120deg, #90ee90 50%, transparent 50%);
+          background-position: 100%;
+          background-size: 400%;
+          transition: background 600ms ease-in-out;
+      }
+      
+      .fourth:hover {
+          background-position: 0;
+          color: #f8f7ff;
+      }    
+      
+      .posleft {
+          top: 75%;
+          left: 16.2%;
+      }
+      
+      .posright {
+          top: 75%;
+          left: 62.9%;
+      }
+            
+      /* General headers and descriptors below: */
     
+    .bigTitle {
+        font-size: 3.2em;
+        font-family: 'Comfortaa', sans-serif;
+        position: absolute;
+        top: 7%;
+        left: 27%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+        box-sizing: border-box;
+        color: #f8f7ff;
+        font-weight: 600;
+        line-height: 1;
+        margin: 20px;
+        padding: 0.3em 2.4em;
+        text-align: center;
+        background-color: #90ee90;
+        border: 2px solid #90ee90;
+        border-radius: 2em;
+    }
+	
+	.bigDesc {
+        font-size: 1.2em;
+        font-family: 'Comfortaa', sans-serif;
+        position: absolute;
+        top: 7%;
+        left: 68%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+        box-sizing: border-box;
+        color: #424242;
+        font-weight: 600;
+        line-height: 1;
+        margin: 20px;
+        width: 32%;
+        text-align: left;
+        border: 1px solid #90ee90;
+        border-radius: 20px;
+        padding: 12px 6px;
+    }
     
+    .headerBreak {
+        width: 80%;
+        margin-top: 10.5%;
+	z-index: 999;
+    }
     
-    
-    
-    
-    
-    
-    
+   
     /* General Blueprint Style */
 /* Resets */
 *,
@@ -401,7 +609,7 @@ body {
 	font-family: 'Comfortaa', sans-serif;
     margin: 0;
 	color: #272727;
-	background: #90d1a7;
+	background: #90ee90;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
