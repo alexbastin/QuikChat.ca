@@ -13,11 +13,9 @@
 	<link href="https://fonts.googleapis.com/css?family=Comfortaa|Nunito+Sans" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/demo.css" />
 	<link rel="stylesheet" type="text/css" href="css/component.css" />
-
-    <script type='text/javascript' src='https://cdn.scaledrone.com/scaledrone.min.js'></script>
+    	<script type='text/javascript' src='https://cdn.scaledrone.com/scaledrone.min.js'></script>
 
     <script src="js/script.js"></script>
-
 	<script src="js/modernizr-custom.js"></script>
 </head>
 
@@ -52,137 +50,33 @@
 		<div class="page" id="page-home">
 			<!-- Blueprint header -->
 
+            
             <h1 class="homeTitle">QuikChat</h1>
             
             <div class="line">__________________________________________________</div>
             
+            <div class="littleDesc"><p>QuikChat was created to enable fast communication in the form of texting and video calls. The entire service is free to use to enjoy. You may navigate our several pages using the icon in the top left corner</p></div>
+            
+       
+            
+            
 		</div>
+        
+        
+        
+        
         
         
 		<!-- homepage -->
         
         <!-- profile -->
         
-        <div class="page" id="page-pro">
-            
-        
-    <br>
-    <br>
-
-    <div id="mydata"></div>
-        
-    <div id="info">
-    <p id="username"></p>
-            
-    <br>
-            
-    <button id="changeusernameshow" onclick="changeusernameshow();">Change Username</button>
-        
-    <br>
-    <br>
-      
-   <p id="newusernametext" style="font-size: 15px; display: none;">New Username</p>
-   <br>
-   <input type="text" id="newusernameid" type="text" name="newusername" value="" style="align-content: center; display: none;">
-   <br>
-   <button id="submitnewusername" style="display: none;" onclick="changeusername();">Submit</button>
-   <br>
-   <br>
-   <img src="close.png" id="newusernameclose" style="height: 5; align-content: center; display: none;">
-
-    <p id="bio"></p>
-    <br>
-        
-    <button id="changeusernameshow" onclick="changeuserbioshow();">Edit Biography</button>
-    <br>
-    <br>
-    <p id="newbio" style="font-size: 15px; display: none;">Edit Bio</p>
-    <br>
-    <br>
-    <input type="text" id="bioid" type="text" name="bio" value="" style="align-content: center; display: none;">
-    <br>
-    <button id="submitnewuserbio" onclick="changeuserbio();" style="display: none;">Submit</button>
-    <br>
-    <br>
-    <img src="close.png" id="newuserbioclose" style="height: 5; display: none;">
-    
-    </div>
-    
-        
-    <script>
-        
-        function changeusernameshow() {
-            
-            document.getElementById('newusernametext').style.display = "block";
-            document.getElementById('newusernameid').style.display = "block";
-            document.getElementById('newusernameclose').style.display = "block";
-            document.getElementById('submitnewusername').style.display = "block";
-            
-        }
-        
-        function changeusername() {
-            
-            var newusername = document.getElementById("newusernameid").value;
-            console.log("New Username: " + newusername);
-            
-            document.getElementById('newusernametext').style.display = "none";
-            document.getElementById('newusernameid').style.display = "none";
-            document.getElementById('newusernameclose').style.display = "none";
-            document.getElementById('submitnewusername').style.display = "none";
-            
-            document.getElementById('username').innerHTML = "Username: " + newusername;
-            firebase.database().ref('users/' + userId).update({
-                userId : changedusername
-            });
-            
-
-        }
-        
-        function changeuserbioshow() {
-            document.getElementById('newbio').style.display = "block";
-            document.getElementById('bioid').style.display = "block";
-            document.getElementById('newuserbioclose').style.display = "block";
-            document.getElementById('submitnewuserbio').style.display = "block";
-        }
-        
-        function changeuserbio() {
-            
-            var newbio = document.getElementById("bioid").value;
-            console.log("New Biography: " + newbio);
-            
-            document.getElementById('newbio').style.display = "none";
-            document.getElementById('bioid').style.display = "none";
-            document.getElementById('newuserbioclose').style.display = "none";
-            document.getElementById('submitnewuserbio').style.display = "none";
-            
-            document.getElementById('bio').innerHTML = "Biography: " + newbio;
-            firebase.database().ref('users/' + userId).update({
-                userBio : changedBio
-            });
-        }
-        
-    </script>
-
-        <br>
-        <br>
-        
-        <center>
-    
-        <div class="profilepicture" id="profilepicture"></div>
-            
-        </center>
-
-        <br>
-        <br>
-        
-        </div>
         
 		<div class="page" id="page-pro">
-    <h1 class="bigTitle">Your Profile</h1>
+			<h1 class="bigTitle">Your Profile</h1>
     <h3 class="bigDesc">Edit your profile here to better represent the awesome person you are!</h3>
     <hr class="headerBreak">
 		</div>
-
 
         <!-- profile -->
         
@@ -190,7 +84,6 @@
         
         
 		<div class="page" id="page-collective">
-
 			
    
  			<h1 class="bigTitle">Collective Chat</h1>
@@ -198,31 +91,28 @@
    		 <hr class="headerBreak">
 		
             
-<br>
-<br>
-    
-<button id="signin" onclick="signin()">Sign in</button> <button id="signout" onclick="signout()">Sign out</button>
-
-<br>
-<br>
-            
+            <div id="datetime"></div>
 <center>
+    
+
+         
+<br>
+ 
+<button id="signin" onclick="signin()">Sign in</button>
+<button id="signout" onclick="signout()">Sign out</button>
     
     <form>
         Tweet Here:
         <br>
         <br>
-        <center>
-        <input id="inputFileToLoad" type="file" onchange="encodeImageFileAsURL();" />
-        </center>
-        <br>
         <textarea id="twit" type="text" name="thetweet" cols="100" rows="4"></textarea>
     </form> 
-    <br>
     <button type="button" onclick="tweet();">Submit</button>
+    <br>
+    <br>
     
-
     <div id="mytweets"></div>
+    <div id="mydata"></div>
 
  </center>
     
@@ -237,7 +127,6 @@
         
         
 		<div class="page" id="page-discover">
-
  			<h1 class="bigTitle">Discover</h1>
     				<h3 class="bigDesc">Browse the Discover page to explore what's popular among the QuikChat community</h3>
    		 <hr class="headerBreak">
@@ -261,14 +150,6 @@
         <!-- video chat -->
 
 		<div class="page" id="page-video">
-            
-            <br>
-            <br>
-            <br>
-            
-            <p class="copy" style="color: black; top: 5%;">Send your URL to a friend to start a video call</p>
-
-		    </div>
             <body1>
     
    <h1 class="bigTitle">Video Chat</h1>
@@ -297,7 +178,6 @@
             
             
 		</div>
->>>>>>> fed5509d4aae27a1fbc7ac07ba2c847ea0e0810d
         
         <!-- video chat -->
         
@@ -316,13 +196,9 @@
         
         
 		<div class="page" id="page-about">
-<<<<<<< HEAD
-
-=======
 			<h1 class="bigTitle">About QuikChat</h1>
     <h3 class="bigDesc">Learn more about this student-run startup that is on track to drastically improve modern communication</h3>
     <hr class="headerBreak">
->>>>>>> fed5509d4aae27a1fbc7ac07ba2c847ea0e0810d
 		</div>
         
         <!-- about us -->
@@ -331,13 +207,9 @@
         
         
 		<div class="page" id="page-contact">
-<<<<<<< HEAD
-
-=======
 			<h1 class="bigTitle">Contact Us</h1>
     <h3 class="bigDesc">Feel free to contact QuikChat anytime to discuss suggestions, issues, or anything else </h3>
     <hr class="headerBreak">
->>>>>>> fed5509d4aae27a1fbc7ac07ba2c847ea0e0810d
 		</div>
         
         <!-- contact -->
@@ -346,13 +218,9 @@
         
         
 		<div class="page" id="page-employment">
-<<<<<<< HEAD
-
-=======
 			<h1 class="bigTitle">Employment</h1>
     <h3 class="bigDesc">Become part of one of Canada's fastest growing startups and work among other high-achieving, like-minded individuals in an amazing workplace on Toronto's own waterfront</h3>
     <hr class="headerBreak">
->>>>>>> fed5509d4aae27a1fbc7ac07ba2c847ea0e0810d
 		</div>
         
         <!-- employment -->
@@ -367,7 +235,30 @@
 </body>
 
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 <style>
+    
+    
+    
+    
+    
     
     
 /* HOME PAGE */    
@@ -388,7 +279,7 @@
         color: #272727;
         position: absolute;
         left: 38.25%;
-        top: 20%
+        top: 25%;
     }
     
      .collectiveTitle {
@@ -406,36 +297,20 @@
         align-content: center;
         font-size: 1em;
     }
-
     
     #signin {
-	   margin-left: 398px;
-       top: 10%;
+        position: absolute;
+	   left: 400px;
+	   top: 400px;
     }
     
     #signout {
-	    margin-left: 532px;
-        top: 10%;
+        position: absolute;
+	    left: 600px;
+	    top: 400px;
     }
-
-<<<<<<< HEAD
-    #mytweets {
-
-    }
-    #inputFileToLoad {
-        margin-left: 75px;
-    }
-    #newusernameclose, #newuserbioclose {
-        height: 10px;
-    }
-    
-    #info {
-        margin-left: 200px;
-    }
-=======
     body1 {
       display: flex;
-
       margin: 0;
       align-items: center;
       justify-content: center;
@@ -468,7 +343,6 @@
           left: 50%;
       }
         
->>>>>>> fed5509d4aae27a1fbc7ac07ba2c847ea0e0810d
     
     }
     .copy {
@@ -628,22 +502,6 @@ a:hover {
         top: 700px;
         left: 700px;
     }
-    
-.profilepicture {
-    margin-left: 0px;
-    border-radius: 50%;
-    display: block;
-    width: 40%;
-}
-    
-.profileimage {
-    border-radius: 50%;
-    align-content: center;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 40%;
-}
     
     
     
@@ -934,6 +792,7 @@ a:hover {
 	position: absolute;
 	z-index: 0;
 	top: 0;
+	opacity: 0;
 }
 /* page content */
 .info {
@@ -991,6 +850,8 @@ a:hover {
 	width: 100%;
 	height: 2px;
 	text-indent: 200%;
+	-webkit-transition: opacity 0.25s;
+	transition: opacity 0.25s;
 }
 .menu-button::before {
 	-webkit-transform: translate3d(0, -10px, 0) scale3d(0.8, 1, 1);
@@ -999,6 +860,9 @@ a:hover {
 .menu-button::after {
 	-webkit-transform: translate3d(0, 10px, 0) scale3d(0.8, 1, 1);
 	transform: translate3d(0, 10px, 0) scale3d(0.8, 1, 1);
+}
+.menu-button--open span {
+	opacity: 0;
 }
 .menu-button--open::before {
 	-webkit-transform: rotate3d(0, 0, 1, 45deg);
@@ -1026,6 +890,7 @@ a:hover {
 		min-height: 20px;
 	}
 	.link--page {
+		overflow: hidden;
 		white-space: nowrap;
 		text-overflow: ellipsis;
 	}
@@ -1062,7 +927,6 @@ a:hover {
 	.poster {
 		margin: 1em;
 	}
-
 }
     
     
@@ -1093,24 +957,20 @@ a:hover {
   padding: 0px;
   border: 0px;
 }
-
 html, body {
   min-height: 100%;
 }
-
-
-
-
     
     
     
     
     </style>    
     
-<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
-    
 <script>
-
+	
+	
+<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+<script>
   // Initialize Firebase
   var config = {
         apiKey: "AIzaSyCToq81cnSSBKbmXS3cmmgjd7ve9h13gpw",
@@ -1133,12 +993,6 @@ html, body {
                 name = user.displayName;
                 imageUrl = user.photoURL;
                 email = user.email;
-                document.getElementById('profilepicture').innerHTML = "<img class=profileimage src='" + imageUrl + "'/>";
-                document.getElementById('username').innerHTML = name;
-                document.getElementById("image").src = imageUrl;
-                document.getElementById("email").innerHTML = email;
-
-                
                     
                 // write user data to users
                 writeUserData(userId, name, email, imageUrl);
@@ -1154,10 +1008,8 @@ html, body {
                 // An error happened.
                 });
                 
-                firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
+                firebase.database().ref('/tweets/' + userId).once('value').then(function(snapshot) {
                     var data = (snapshot.val());
-                    dataarray = [data];
-                    users = dataarray[0];
                     if (data == null) {
                       console.log("No data found at /tweets" + userId);  
                     } else {
@@ -1186,13 +1038,10 @@ html, body {
         // write user data
         function writeUserData(userId, name, email, imageUrl) {
             firebase.database().ref('users/' + userId).set({
-                userId : userId,
                 username: name,
                 email: email,
                 profile_picture : imageUrl
-                
             });
-            
         }
            
     
@@ -1211,6 +1060,7 @@ html, body {
         
         // write tweets to firebase
         function tweet() {
+            
             twitdoc = document.getElementById("twit");
             var nameValue = twitdoc.value;
             var js_time = Date.now();
@@ -1226,23 +1076,6 @@ html, body {
                       updatetweets(data);
                     }
                 });
-            
-            for (var u in users) {
-                if (users[u].email == email) {
-                    changedusername = users[u].newusername
-                }
-            }
-            
-            for (var u in users) {
-                if (users[u].email == email) {
-                    updatedbio = users[u].bio
-                }
-            }
-            
-            
-        function ChooseImage() {
-            
-        }
             
             // The unique key stored in tweetid is based on a timestamp, so list items will automatically be ordered chronologically. Because Firebase generates a unique key for each tweet, no write conflicts will occur if multiple users add a post at the same time. https://firebase.google.com/docs/database/admin/save-data
             
@@ -1263,6 +1096,8 @@ html, body {
         }
     
     </script>    
+	
+	</script>
     
     
 </html>
