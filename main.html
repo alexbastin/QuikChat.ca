@@ -135,7 +135,6 @@
                 userId : changedusername
             });
             
-
         }
         
         function changeuserbioshow() {
@@ -262,17 +261,14 @@
 
 		<div class="page" id="page-video">
             
+            <body1>
+            
             <br>
             <br>
             <br>
             
-            <p class="copy" style="color: black; top: 5%;">Send your URL to a friend to start a video call</p>
-
-		    </div>
-            <body1>
     
    <h1 class="bigTitle">Video Chat</h1>
-    <h3 class="bigDesc">Video Chat allows to interact with friends, family, or anyone else in a more personal manner</h3>
     <hr class="headerBreak">
     
 <input type="hidden" id="input-url" value="URL has been copied!">
@@ -296,8 +292,7 @@
 
             
             
-		</div>
->>>>>>> fed5509d4aae27a1fbc7ac07ba2c847ea0e0810d
+    </div>
         
         <!-- video chat -->
         
@@ -316,13 +311,13 @@
         
         
 		<div class="page" id="page-about">
-<<<<<<< HEAD
-
-=======
-			<h1 class="bigTitle">About QuikChat</h1>
+        
+        <h1 class="bigTitle">About QuikChat</h1>
+            
     <h3 class="bigDesc">Learn more about this student-run startup that is on track to drastically improve modern communication</h3>
+            
     <hr class="headerBreak">
->>>>>>> fed5509d4aae27a1fbc7ac07ba2c847ea0e0810d
+
 		</div>
         
         <!-- about us -->
@@ -331,13 +326,11 @@
         
         
 		<div class="page" id="page-contact">
-<<<<<<< HEAD
 
-=======
-			<h1 class="bigTitle">Contact Us</h1>
+    <h1 class="bigTitle">Contact Us</h1>
     <h3 class="bigDesc">Feel free to contact QuikChat anytime to discuss suggestions, issues, or anything else </h3>
     <hr class="headerBreak">
->>>>>>> fed5509d4aae27a1fbc7ac07ba2c847ea0e0810d
+
 		</div>
         
         <!-- contact -->
@@ -346,13 +339,11 @@
         
         
 		<div class="page" id="page-employment">
-<<<<<<< HEAD
 
-=======
-			<h1 class="bigTitle">Employment</h1>
+    <h1 class="bigTitle">Employment</h1>
     <h3 class="bigDesc">Become part of one of Canada's fastest growing startups and work among other high-achieving, like-minded individuals in an amazing workplace on Toronto's own waterfront</h3>
     <hr class="headerBreak">
->>>>>>> fed5509d4aae27a1fbc7ac07ba2c847ea0e0810d
+
 		</div>
         
         <!-- employment -->
@@ -406,7 +397,6 @@
         align-content: center;
         font-size: 1em;
     }
-
     
     #signin {
 	   margin-left: 398px;
@@ -418,9 +408,7 @@
         top: 10%;
     }
 
-<<<<<<< HEAD
     #mytweets {
-
     }
     #inputFileToLoad {
         margin-left: 75px;
@@ -432,10 +420,9 @@
     #info {
         margin-left: 200px;
     }
-=======
+
     body1 {
       display: flex;
-
       margin: 0;
       align-items: center;
       justify-content: center;
@@ -452,6 +439,7 @@
         padding: 0;
         border: 3px solid #90ee90;
         box-shadow: rgba(156, 172, 172, 0.2) 0px 2px 2px, rgba(156, 172, 172, 0.2) 0px 4px 4px, rgba(156, 172, 172, 0.2) 0px 8px 8px, rgba(156, 172, 172, 0.2) 0px 16px 16px, rgba(156, 172, 172, 0.2) 0px 32px 32px, rgba(156, 172, 172, 0.2) 0px 64px 64px;
+	    background: transparent;
     }
       
       
@@ -467,8 +455,6 @@
           top: 19%;
           left: 50%;
       }
-        
->>>>>>> fed5509d4aae27a1fbc7ac07ba2c847ea0e0810d
     
     }
     .copy {
@@ -505,7 +491,6 @@
           position: absolute;
           z-index: 999;
           text-decoration: none;
-          
       }
       
       .btn:hover, .btn:focus {
@@ -991,6 +976,8 @@ a:hover {
 	width: 100%;
 	height: 2px;
 	text-indent: 200%;
+    -webkit-transition: opacity 0.25s;		
+	transition: opacity 0.25s;
 }
 .menu-button::before {
 	-webkit-transform: translate3d(0, -10px, 0) scale3d(0.8, 1, 1);
@@ -999,6 +986,9 @@ a:hover {
 .menu-button::after {
 	-webkit-transform: translate3d(0, 10px, 0) scale3d(0.8, 1, 1);
 	transform: translate3d(0, 10px, 0) scale3d(0.8, 1, 1);
+}
+.menu-button--open span {		
+	opacity: 0;		
 }
 .menu-button--open::before {
 	-webkit-transform: rotate3d(0, 0, 1, 45deg);
@@ -1026,6 +1016,7 @@ a:hover {
 		min-height: 20px;
 	}
 	.link--page {
+        overflow: hidden;
 		white-space: nowrap;
 		text-overflow: ellipsis;
 	}
@@ -1062,7 +1053,6 @@ a:hover {
 	.poster {
 		margin: 1em;
 	}
-
 }
     
     
@@ -1093,24 +1083,19 @@ a:hover {
   padding: 0px;
   border: 0px;
 }
-
 html, body {
   min-height: 100%;
 }
-
-
-
-
     
     
     
     
     </style>    
     
+    
 <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
     
 <script>
-
   // Initialize Firebase
   var config = {
         apiKey: "AIzaSyCToq81cnSSBKbmXS3cmmgjd7ve9h13gpw",
@@ -1137,7 +1122,6 @@ html, body {
                 document.getElementById('username').innerHTML = name;
                 document.getElementById("image").src = imageUrl;
                 document.getElementById("email").innerHTML = email;
-
                 
                     
                 // write user data to users
@@ -1265,4 +1249,3 @@ html, body {
     </script>    
     
     
-</html>
