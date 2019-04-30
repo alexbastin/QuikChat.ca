@@ -53,8 +53,25 @@
 			<!-- Blueprint header -->
 
             <h1 class="homeTitle">QuikChat</h1>
+            <hr class="headerBreak">
+			<div class="FrontBlock left">
+    <h1 class="BlockTitle">What is QuikChat?</h1>
+    <p class="BlockText">QuikChat is a platform that is designed to facilitate and accelerate communcication between friends, family, or anyone else throuhg a variety of methods of interaction.</p>
+    </div>
+    
+        <div class="FrontBlock middle">
+    <h1 class="BlockTitle">How to use Quikchat</h1>
+    <p class="BlockText big">QuikChat has a plethora of sites to visit; navigate them by using the three-lined button that resides in the top left corner of the screen.</p>
+    </div>
+    
+            <div class="FrontBlock small right">
+    <h1 class="BlockTitle">About us</h1>
+    <p class="BlockText">QuikChat is a student-run technology startup founded by Alex Bastin and Vikram Rawal. QuikChat was created to fill the gap in the communcation market on computers; email is too slow and there aren't any faster alternatives - untill now </p>
+    </div>
+			
+		<a class="js-emaillink" href="mailto:yourfriendsemail@here.com?&subject=Check out QUikChat&body=Hey Friend,%0d%0a%0d%0aI found this awesome social media named QuikChat. It allows you to communicate quickly using a variety of methods like group chat or video chat. Visit it at QuikChat.ca%0d%0a%0d%0aSee you there!">
+        <button class="btn fourth posmiddle">Send to a friend</button>
             
-            <div class="line">__________________________________________________</div>
             
 		</div>
         
@@ -135,6 +152,7 @@
             firebase.database().ref('users/' + userId).update({
                 newusername : changedusername
             });
+            console.log(changedusername);
             
         }
         
@@ -224,6 +242,8 @@
 
     <div id="mytweets"></div>
     <img id="imgTest" style="display:block; height: 50px;">
+    
+    
 
  </center>
     
@@ -409,6 +429,7 @@
 	    margin-left: 532px;
         top: 10%;
     }
+
     #mytweets {
     }
     #inputFileToLoad {
@@ -421,6 +442,7 @@
     #info {
         margin-left: 200px;
     }
+
     body1 {
       display: flex;
       margin: 0;
@@ -514,14 +536,18 @@
       }    
       
       .posleft {
-          top: 75%;
+          top: 80%;
           left: 16.2%;
       }
       
       .posright {
-          top: 75%;
+          top: 80%;
           left: 62.9%;
       }
+	
+	.posmiddle
+	top: 70%;
+	left: 45%;
             
       /* General headers and descriptors below: */
     
@@ -841,7 +867,53 @@ a:hover {
 .link:focus {
 	color: #f8f7ff;
     
+    .frontBlock {
+        width: 25%;
+        height: 30%;
+        background-color: transparent;
+        padding: 10px 10px;
+        margin: 10px;
+        border-radius: 20px;
+        border: 2px solid #90ee90;
+        background-color: rgba(144,238,144,0.1);
+        font-size: 1.2em;
+        font-family: 'Comfortaa', sans-serif;
+        font-weight: 500;
+    }
     
+    .BlockTitle {
+        font-size: 1.7em;
+    }
+    
+    .BlockText {
+        font-size: 1.1em;
+    }
+    
+    .left {
+        position: absolute;
+        top: 30%;
+        left: 5%;
+    }
+    
+    .middle {
+        position: absolute;
+        left: 37.5%;
+        top: 30%;
+    }
+    
+    .right {
+        position: absolute;
+        top: 30%;
+        left: 70%;
+    }
+    
+    .small {
+        font-size: 1.1em;
+    }
+    
+     .big {
+        font-size: 1.25em;
+    }
     
     
 }
@@ -1132,11 +1204,6 @@ html, body {
                 mydiv.innerHTML = name
                 myphotodiv = document.getElementById("myphoto");
                 myphotodiv.innerHTML = "<img src='" + imageUrl + "'/>";
-                user.sendEmailVerification().then(function() {
-                // Email sent.
-                }).catch(function(error) {
-                // An error happened.
-                });
                 
                 firebase.database().ref('/users/').once('value').then(function(snapshot) {
                     var data = (snapshot.val());
@@ -1146,7 +1213,15 @@ html, body {
                     if (data == null) {
                       console.log("No data found at /tweets" + userId);  
                     } else {
-                      console.log(data);
+                        
+                        firebase.database().ref('/users').once('value').then(function(snapshot) { 
+                        var userdata = (snapshot.val());
+                        if (userdata != null) {
+                           dataarray = [data,userdata]
+                           console.log(dataarray)
+                           updatetweets(dataarray); 
+                        }
+                        });
                       /*
                       console.log(data); 
                       var mylist = "<ul>";
@@ -1162,11 +1237,13 @@ html, body {
                       var mytdiv = document.getElementById("mytweets");
                       mytdiv.innerHTML = mylist;
                       */
-                      updatetweets(data);
+                      //updatetweets(data);
                     }
                 });
             } // end user null check
         }); // end check auth state
+    
+    
         
         // write user data
         function writeUserData(userId, name, email, imageUrl) {
@@ -1178,9 +1255,12 @@ html, body {
                 
             });
             
+            
+            
         }
-    
+           
         function encodeImageFileAsURL() {
+
             var filesSelected = document.getElementById("inputFileToLoad").files;
             if (filesSelected.length > 0) {
                 var fileToLoad = filesSelected[0];
@@ -1199,20 +1279,17 @@ html, body {
                     imgTest.setAttribute('src', img64);
                     console.log(img64);
                     
-                    }
+                }
                 fileReader.readAsDataURL(fileToLoad);
             }
         } // end function
-
-           
     
         function updatetweets(data) {
             var mylist = "<ul>";
             for (var u in data) {
-                var n = name;
                 var d = new Date(data[u].time);
                 var t = d.toString();
-                mylist = mylist + "<li>" + n + ": " + data[u].tweet + " (" + t + ")</li>";
+                mylist = mylist + "<li>" + data[u].tweet + " (" + t + ")</li>";
             }
             mylist = mylist + "<ul>";
             var mytdiv = document.getElementById("mytweets");
@@ -1224,9 +1301,9 @@ html, body {
         function tweet() {
             twitdoc = document.getElementById("twit");
             var nameValue = twitdoc.value;
+            var twitimg = document.getElementById('imgTest');
             var js_time = Date.now();
-            var tweetid = firebase.database().ref('tweets/' + userId + "/").push({tweet: nameValue, time: js_time, users: userId});
-            var useid = firebase.database().ref('users/' + userId + "/").push({users: userId});
+            var tweetid = firebase.database().ref('tweets/' + userId + "/").push({tweet: nameValue, time: js_time});
             twitdoc.value = "";
             console.log("tweet written");
             
@@ -1238,8 +1315,6 @@ html, body {
                       updatetweets(data);
                     }
                 });
-            
-            // write users to firebase
             
             for (var u in users) {
                 if (users[u].email == email) {
@@ -1254,9 +1329,6 @@ html, body {
             }
             
             
-        function ChooseImage() {
-            
-        }
             
             // The unique key stored in tweetid is based on a timestamp, so list items will automatically be ordered chronologically. Because Firebase generates a unique key for each tweet, no write conflicts will occur if multiple users add a post at the same time. https://firebase.google.com/docs/database/admin/save-data
             
@@ -1279,4 +1351,5 @@ html, body {
     </script>
     
     </html>
+    
     
