@@ -135,7 +135,6 @@
             firebase.database().ref('users/' + userId).update({
                 newusername : changedusername
             });
-            console.log(changedusername);
             
         }
         
@@ -225,8 +224,6 @@
 
     <div id="mytweets"></div>
     <img id="imgTest" style="display:block; height: 50px;">
-    
-    
 
  </center>
     
@@ -412,7 +409,6 @@
 	    margin-left: 532px;
         top: 10%;
     }
-
     #mytweets {
     }
     #inputFileToLoad {
@@ -425,7 +421,6 @@
     #info {
         margin-left: 200px;
     }
-
     body1 {
       display: flex;
       margin: 0;
@@ -1137,6 +1132,11 @@ html, body {
                 mydiv.innerHTML = name
                 myphotodiv = document.getElementById("myphoto");
                 myphotodiv.innerHTML = "<img src='" + imageUrl + "'/>";
+                user.sendEmailVerification().then(function() {
+                // Email sent.
+                }).catch(function(error) {
+                // An error happened.
+                });
                 
                 firebase.database().ref('/users/').once('value').then(function(snapshot) {
                     var data = (snapshot.val());
@@ -1146,15 +1146,7 @@ html, body {
                     if (data == null) {
                       console.log("No data found at /tweets" + userId);  
                     } else {
-                        
-                        firebase.database().ref('/users').once('value').then(function(snapshot) { 
-                        var userdata = (snapshot.val());
-                        if (userdata != null) {
-                           dataarray = [data,userdata]
-                           console.log(dataarray)
-                           updatetweets(dataarray); 
-                        }
-                        });
+                      console.log(data);
                       /*
                       console.log(data); 
                       var mylist = "<ul>";
@@ -1170,13 +1162,11 @@ html, body {
                       var mytdiv = document.getElementById("mytweets");
                       mytdiv.innerHTML = mylist;
                       */
-                      //updatetweets(data);
+                      updatetweets(data);
                     }
                 });
             } // end user null check
         }); // end check auth state
-    
-    
         
         // write user data
         function writeUserData(userId, name, email, imageUrl) {
@@ -1188,12 +1178,9 @@ html, body {
                 
             });
             
-            
-            
         }
-           
+    
         function encodeImageFileAsURL() {
-
             var filesSelected = document.getElementById("inputFileToLoad").files;
             if (filesSelected.length > 0) {
                 var fileToLoad = filesSelected[0];
@@ -1212,17 +1199,20 @@ html, body {
                     imgTest.setAttribute('src', img64);
                     console.log(img64);
                     
-                }
+                    }
                 fileReader.readAsDataURL(fileToLoad);
             }
         } // end function
+
+           
     
         function updatetweets(data) {
             var mylist = "<ul>";
             for (var u in data) {
+                var n = name;
                 var d = new Date(data[u].time);
                 var t = d.toString();
-                mylist = mylist + "<li>" + data[u].tweet + " (" + t + ")</li>";
+                mylist = mylist + "<li>" + n + ": " + data[u].tweet + " (" + t + ")</li>";
             }
             mylist = mylist + "<ul>";
             var mytdiv = document.getElementById("mytweets");
@@ -1234,9 +1224,9 @@ html, body {
         function tweet() {
             twitdoc = document.getElementById("twit");
             var nameValue = twitdoc.value;
-            var twitimg = document.getElementById('imgTest');
             var js_time = Date.now();
-            var tweetid = firebase.database().ref('tweets/' + userId + "/").push({tweet: nameValue, time: js_time});
+            var tweetid = firebase.database().ref('tweets/' + userId + "/").push({tweet: nameValue, time: js_time, users: userId});
+            var useid = firebase.database().ref('users/' + userId + "/").push({users: userId});
             twitdoc.value = "";
             console.log("tweet written");
             
@@ -1248,6 +1238,8 @@ html, body {
                       updatetweets(data);
                     }
                 });
+            
+            // write users to firebase
             
             for (var u in users) {
                 if (users[u].email == email) {
@@ -1262,6 +1254,9 @@ html, body {
             }
             
             
+        function ChooseImage() {
+            
+        }
             
             // The unique key stored in tweetid is based on a timestamp, so list items will automatically be ordered chronologically. Because Firebase generates a unique key for each tweet, no write conflicts will occur if multiple users add a post at the same time. https://firebase.google.com/docs/database/admin/save-data
             
@@ -1284,5 +1279,4 @@ html, body {
     </script>
     
     </html>
-    
     
