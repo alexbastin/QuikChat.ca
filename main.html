@@ -123,6 +123,7 @@
         function changeusername() {
             
             var newusername = document.getElementById("newusernameid").value;
+            changedusername = newusername;
             console.log("New Username: " + newusername);
             
             document.getElementById('newusernametext').style.display = "none";
@@ -132,7 +133,7 @@
             
             document.getElementById('username').innerHTML = "Username: " + newusername;
             firebase.database().ref('users/' + userId).update({
-                userId : changedusername
+                newusername : changedusername
             });
             
         }
@@ -407,6 +408,7 @@
 	    margin-left: 532px;
         top: 10%;
     }
+
     #mytweets {
     }
     #inputFileToLoad {
@@ -419,6 +421,7 @@
     #info {
         margin-left: 200px;
     }
+
     body1 {
       display: flex;
       margin: 0;
@@ -1136,10 +1139,11 @@ html, body {
                 // An error happened.
                 });
                 
-                firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
+                firebase.database().ref('/users/').once('value').then(function(snapshot) {
                     var data = (snapshot.val());
                     dataarray = [data];
                     users = dataarray[0];
+                    
                     if (data == null) {
                       console.log("No data found at /tweets" + userId);  
                     } else {
@@ -1244,6 +1248,8 @@ html, body {
             });
         }
     
-    </script>    
-
-</html>
+    </script>
+    
+    </html>
+    
+    
