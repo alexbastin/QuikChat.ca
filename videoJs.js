@@ -1,5 +1,5 @@
 if (!location.hash) {
-  location.hash = Math.floor(Math.random() * 0xFFFFFF).toString(16);
+  location.hash = Math.floor(Math.random() * 0xFF).toString(16);
 }
 const roomHash = location.hash.substring(1);
 const drone = new ScaleDrone('XahUzA3WSVmhao2b');
