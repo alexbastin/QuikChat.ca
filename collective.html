@@ -141,14 +141,14 @@
                     console.log(users[u].profile_picture);
                     console.log(users[u].username);
                     if (data[u][t].img != "") {
-                        mytab = mytab + "<td><img src='" + users[u].profile_picture + "' width='50px'>" + "<br>" + "<br>" + "<button class='" + "seeprofile" + users[u].username + "' id=" + "'seeprofile" + users[u].username + "' onclick='viewprofile(this.id)'>See User's Profile" + "</button>" + "<br>" + "<button class='" + "follow" + users[u].username + "' id=" + "'follow " + users[u].username + "' onclick='follow(this.className)'>Follow This User" + "</button>" + "</td>";
+                        mytab = mytab + "<td><img src='" + users[u].profile_picture + "' width='50px'>" + "<br>" + "<br>" + "<button class='" + "seeprofile" + users[u].username + "' id=" + "'seeprofile" + users[u].username + "'</button>" + "<br>" + "<button class='" + "follow" + users[u].username + "' id=" + "'follow " + users[u].username + "' onclick='follow(this.className)'>Follow This User" + "</button>" + "</td>";
                         mytab = mytab + "<td>" + users[u].username + "</td>";
                         mytab = mytab + "<td>" + data[u][t].tweet + "</td>";
                         mytab = mytab + "<td>" + "<p>" + time + "</p>" + "<p>" + date + "</p>" + "<br><img src='" + data[u][t].img + "' width='300px'></td>";
                         mytab = mytab + "<td><p>Like this tweet</p>" + "<button id='" + u + "/" + t + "' onclick=" + "like(this.id)" + ">Like</button>" + "<p>Likes: </p>" + "<p id='" + u + "/" + t + "likes'" + "'>" + data[u][t].likes + "</p>" + "</td>";
                          
                     } else {
-                        mytab = mytab + "<td><img src='" + users[u].profile_picture + "' width='50px'>" + "<br>" + "<br>" + "<button class='" + "seeprofile" + users[u].username + "' id=" + "'seeprofile" + users[u].username + "' onclick='viewprofile(this.className)'>See User's Profile" + "</button>" + "<br>" + "<button class='" + "follow" + users[u].username + "' id=" + "'follow " + users[u].username + "' onclick='follow(this.className)'>Follow This User" + "</button>" + "</td>";
+                        mytab = mytab + "<td><img src='" + users[u].profile_picture + "' width='50px'>" + "<br>" + "<br>" + "<button class='" + "seeprofile" + users[u].username + "' id=" + "'seeprofile" + users[u].username + "'</button>" + "<br>" + "<button class='" + "follow" + users[u].username + "' id=" + "'follow " + users[u].username + "' onclick='follow(this.className)'>Follow This User" + "</button>" + "</td>";
                         mytab = mytab + "<td>" + users[u].username + "</td>";
                         mytab = mytab + "<td>" + data[u][t].tweet + "</td>";
                         mytab = mytab + "<td>" + "<p>" + time + "</p>" + "<p>" + date + "</p>" + "</td>";
