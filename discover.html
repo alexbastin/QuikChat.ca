@@ -19,5 +19,50 @@
     </div>
   </header>
     
+    <p id='listofusers'>List of Users</p>
+    
+    <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    
+    <script>
+        
+                userId = user.uid;
+                name = user.displayName;
+                imageUrl = user.photoURL;
+                email = user.email;
+        
+          var config = {
+               apiKey: "AIzaSyA85okZdA9v_XAa9BgJJ2EOdUEbL09k0uY",
+               authDomain: "fir-test-bcb6d.firebaseapp.com",
+               databaseURL: "https://fir-test-bcb6d.firebaseio.com",
+               projectId: "fir-test-bcb6d",
+               storageBucket: "fir-test-bcb6d.appspot.com",
+               messagingSenderId: "976121809263"
+          };
+  firebase.initializeApp(config);
+        
+        firebase.database().ref('/users').once('value').then(function(snapshot) { 
+        var userdata = (snapshot.val());
+            if (userdata != null) {
+                dataarray = [userdata]
+            }
+        });
+        
+        var users = userdata[0];
+        
+        for (var u in users) {
+            document.getElementById('listofusers').innerHTML = users[u].username    
+        }
+        
+
+        
+    
+        
+        
+        
+        
+        
+    </script>
+    
     
 </html> 
