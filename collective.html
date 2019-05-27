@@ -1,9 +1,25 @@
 <html>
-    
+<header>
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,500,600,700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuikChat</title>
+    <meta name="description" content="Communicate with friends, family, or anyone else quickly using QuikChat" />
+    <meta name="keywords" content="Quikchat, communicate, talk, video, chat, quick, social media" />
+    <meta name="author" content="RB Technology" />
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,500,600,700&display=swap" rel="stylesheet">
+    <link href="StyleSheet.css" rel="stylesheet" type="text/css">
     <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
-
-<header>
+</header>    
+    
+<body>
+        
+         <img class="imgWhiteLogo" src="WhiteLogo.png">
+    
+    <header>
     <div class="container">
       <h1 class="logo"></h1>
     
@@ -11,17 +27,160 @@
       <nav>
         <ul>
           <li><a href="home.html">Home</a></li>
-          <li><a href="profile.html">Profile</a></li>
-          <li><a href="discover.html">Discover</a></li>
-          <li><a href="collective.html">Collective</a></li>
-          <li><a href="video.html">Video</a></li>
-          <li><a href="private.html">Private</a></li>
-          <li><a href="employment.html">Employment</a></li>
+          <li><a href="Profile.html">Profile</a></li>
+          <li><a href="Discover.html">Discover</a></li>
+          <li><a href="Collective.html">Collective</a></li>
+          <li><a href="Video.html">Video</a></li>
+          <li><a href="Private.html">Private</a></li>
+            <li><a href="Employment.html">Employment</a></li>
         </ul>
       </nav>
     </div>
   </header>
- 
+
+    
+    
+    
+    <h2 class="OtherTitle P31LU"><span class="typingC"></span></h2>
+    
+    <script src="jquery.2.min.js"></script>
+    <script src="typed.min.js"></script>
+    <script type="text/javascript">
+        var typed = new Typed('.typingC', {
+            strings: ["Collective Chat:", "Engage with the QuikChat community by", "Commenting", "Liking", "Following", "Replying", "Enjoy!"], 
+            loop: true,
+            typeSpeed: 15,
+            backSpeed: 10,
+            backDelay: 1200,
+            
+        });
+    </script>
+    
+    <p class="VideoDesc P32LC">Enter the QuikChat Collective Chat to interact with the Quikchat community by sharing ideas, comments, or anything else. Show support for other users by liking or even following!&nbsp; <b> Just ensure you're signed in</b></p>
+    
+    
+
+    <button class="btn fourth P36LU" onclick="signin()">Sign in</button>
+        <button class="btn fourth P36MU" onclick="signout()">Sign out</button>
+        
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+        <center><form>
+            <p>Comment here:</p>
+            <textarea id="twit" type="text" name="thetweet" cols="100" rows="4"></textarea>
+        </form> </center>
+    
+        <button class="btn fourth P36LD" type="button" onclick="tweet()">Submit</button>
+        <br>
+        <br>
+        <input class="btn fourth edit123 P36RD" id="inputFileToLoad" type="file" onchange="encodeImageFileAsURL();" />
+        <div id="imgTest" style="display:none;"></div>
+        <br>
+    <div id="mytweets"></div>
+    <br>
+    <div id="mydata"></div>
+        
+        <br>
+        <button id="changeusernameshow" onclick='changeusernameshow()'>Change Username</button>
+        <br>
+        <p class="ifchangeusername" id="newusernameinstruct" style="display: none;">Enter New Username:</p>
+        <br>
+        <input class="ifchangeusername" type="text" id="newusernameinput" type="text" name="newusername" value="" placeholder="New Username ..." style="display: none;">
+        <br>
+        <button class="ifchangeusername" id="submitnewusername" style="display: none;" onclick="changeusername();">Submit</button>
+        <br>
+        <button class="ifchangeusername" id="closenewusername" style="display: none;" onclick="closeusername();">Close</button>
+        <br>
+        
+        <p id="mybio">About Me:</p>
+        
+        <br>
+        <button id="changebioshow" onclick='changebioshow()'>Change Bio</button>
+        <br>
+        <p id="newbioinstruct" style="display: none;">Enter New Biography</p>
+        <br>
+        <input type="text" id="newbioinput" type="text" name="newusername" value="" placeholder="New Bio ..." style="display: none;">
+        <br>
+        <button id="submitnewbio" style="display: none;" onclick="changebio();">Submit</button>
+        <br>
+        <button id="closenewbio" style="display: none;" onclick="closebio();">Close</button>
+        <br>
+        
+        
+        
+        
+    <div id="myphoto"></div>
+    <br>
+    <div id="myprofileinfo"></div>
+    <br>
+    <p id="numberofusers"></p>
+    <br>
+    <div style="width:300px;">
+        <input id="myInput" type="text" name="myCountry" placeholder="Search a User!">
+    </div>
+        
+    </body>
+
+    <style>
+    
+    .VideoDesc {
+        font-size: 1.2em;
+        font-weight: 300;
+        width: 90%;
+        height: 20%;
+        
+    }
+      
+    .OtherTitle {
+        font-size: 2em;
+        font-weight: 600;
+    }  
+        
+    .P31LU{
+        position: absolute;
+        top: 11%;
+        left: 9%;
+    }
+
+    .P32LC {
+        position: absolute;
+        top: 18%;
+        left: 9%;
+    }   
+        
+        p {
+            font-size: 1.2em;
+            font-weight: 500;
+        }
+        
+        .edit123 {
+            padding: 0.4em 1em;
+            text-align: center;
+        }
+      
+        .P36LD {
+            position: absolute;
+            top: 
+        }
+        
+    </style>
+    
+    
+    
   <script>
         
         // Initialize Firebase
@@ -37,6 +196,10 @@
                 
         // Check to see if you are logged in
         firebase.auth().onAuthStateChanged(function(user) {
+            if (user == null) {
+                alert("Not logged in.");
+                return;
+            } else {
                 alert("Logged in.");
                 userId = user.uid;
                 name = user.displayName;
@@ -138,14 +301,14 @@
                     console.log(users[u].profile_picture);
                     console.log(users[u].username);
                     if (data[u][t].img != "") {
-                        mytab = mytab + "<td><img src='" + users[u].profile_picture + "' width='50px'>" + "<br>" + "<br>" + "<button class='" + "seeprofile" + users[u].username + "' id=" + "'seeprofile" + users[u].username + "'>See User Profile</button>" + "<br>" + "<button class='" + "follow" + users[u].username + "' id=" + "'follow " + users[u].username + "' onclick='follow(this.className)'>Follow This User" + "</button>" + "</td>";
+                                                mytab = mytab + "<td><img src='" + users[u].profile_picture + "' width='50px'>" + "<br>" + "<br>" + "<button class='" + "seeprofile" + users[u].username + "' id=" + "'seeprofile" + users[u].username + "'</button>" + "<br>" + "<button class='" + "follow" + users[u].username + "' id=" + "'follow " + users[u].username + "' onclick='follow(this.className)'>Follow This User" + "</button>" + "</td>";
                         mytab = mytab + "<td>" + users[u].username + "</td>";
                         mytab = mytab + "<td>" + data[u][t].tweet + "</td>";
                         mytab = mytab + "<td>" + "<p>" + time + "</p>" + "<p>" + date + "</p>" + "<br><img src='" + data[u][t].img + "' width='300px'></td>";
                         mytab = mytab + "<td><p>Like this tweet</p>" + "<button id='" + u + "/" + t + "' onclick=" + "like(this.id)" + ">Like</button>" + "<p>Likes: </p>" + "<p id='" + u + "/" + t + "likes'" + "'>" + data[u][t].likes + "</p>" + "</td>";
                          
                     } else {
-                        mytab = mytab + "<td><img src='" + users[u].profile_picture + "' width='50px'>" + "<br>" + "<br>" + "<button class='" + "seeprofile" + users[u].username + "' id=" + "'seeprofile" + users[u].username + "'>See User Profile</button>" + "<br>" + "<button class='" + "follow" + users[u].username + "' id=" + "'follow " + users[u].username + "' onclick='follow(this.className)'>Follow This User" + "</button>" + "</td>";
+                                                mytab = mytab + "<td><img src='" + users[u].profile_picture + "' width='50px'>" + "<br>" + "<br>" + "<button class='" + "seeprofile" + users[u].username + "' id=" + "'seeprofile" + users[u].username + "'</button>" + "<br>" + "<button class='" + "follow" + users[u].username + "' id=" + "'follow " + users[u].username + "' onclick='follow(this.className)'>Follow This User" + "</button>" + "</td>";
                         mytab = mytab + "<td>" + users[u].username + "</td>";
                         mytab = mytab + "<td>" + data[u][t].tweet + "</td>";
                         mytab = mytab + "<td>" + "<p>" + time + "</p>" + "<p>" + date + "</p>" + "</td>";
@@ -437,80 +600,7 @@
             closebio();  
         }
         
-        
-        
-        
-        
-        
     
     </script>
-
-    <body>
-        <button onclick="signin()">Sign in</button>
-        <button onclick="signout()">Sign out</button>
-        
-        <br>
-    
-        <form>
-            Tweet:<br>
-            <textarea id="twit" type="text" name="thetweet" cols="100" rows="4"></textarea>
-        </form> 
-        <button type="button" onclick="tweet()">Submit</button>
-        <br>
-        <br>
-        <input id="inputFileToLoad" type="file" onchange="encodeImageFileAsURL();" />
-        <div id="imgTest" style="display:none;"></div>
-        <br>
-    <div id="mytweets"></div>
-    <br>
-    <div id="mydata"></div>
-        
-        <br>
-        <button id="changeusernameshow" onclick='changeusernameshow()'>Change Username</button>
-        <br>
-        <p class="ifchangeusername" id="newusernameinstruct" style="display: none;">Enter New Username:</p>
-        <br>
-        <input class="ifchangeusername" type="text" id="newusernameinput" type="text" name="newusername" value="" placeholder="New Username ..." style="display: none;">
-        <br>
-        <button class="ifchangeusername" id="submitnewusername" style="display: none;" onclick="changeusername();">Submit</button>
-        <br>
-        <button class="ifchangeusername" id="closenewusername" style="display: none;" onclick="closeusername();">Close</button>
-        <br>
-        
-        <p id="mybio">About Me:</p>
-        
-        <br>
-        <button id="changebioshow" onclick='changebioshow()'>Change Bio</button>
-        <br>
-        <p id="newbioinstruct" style="display: none;">Enter New Biography</p>
-        <br>
-        <input type="text" id="newbioinput" type="text" name="newusername" value="" placeholder="New Bio ..." style="display: none;">
-        <br>
-        <button id="submitnewbio" style="display: none;" onclick="changebio();">Submit</button>
-        <br>
-        <button id="closenewbio" style="display: none;" onclick="closebio();">Close</button>
-        <br>
-        
-        
-        
-        
-    <div id="myphoto"></div>
-    <br>
-    <div id="myprofileinfo"></div>
-    <br>
-    <p id="numberofusers"></p>
-    <br>
-    <div style="width:300px;">
-        <input id="myInput" type="text" name="myCountry" placeholder="Search a User!">
-    </div>
-        
-        
-        
-        
-    </body>
-
-    
-
-    
 </html>
     
