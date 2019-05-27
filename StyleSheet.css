@@ -5,6 +5,8 @@
         margin: 0;
         color: #272727;
         background: #f8f7ff;
+        height: 100vh;
+        width: 100vw;
     }
 
     .HomeTitle {
@@ -76,6 +78,15 @@
         position: absolute;
         padding: 0px;
     }
+
+.imgWhiteLogo{
+    width: 20%;
+    padding: 0px;
+    z-index: 100;
+    position: absolute;
+    top: 0.1%;
+    left: 8%;
+}
     
 /* END - Media Modification */ 
 
@@ -101,43 +112,42 @@
 
     .P11LU {
         position: absolute;
-        top: 12%;
+        top: 13%;
         left: 4%;
     }
 
     .P14RU {
         position: absolute;
-        top: -8%;
+        top: -7%;
         right: 0%;
         z-index: -5;
     }
 
     .P12LU {
         position: absolute;
-        top: 20%;
+        top: 21%;
         left: 4%;
     } 
 
     .P16LC {
         position: absolute;
-        top: 50%;
+        top: 51%;
         left: 2.7%;
     }
 
     .P16LD {
         position: absolute;
-        top: 50%;
+        top: 51%;
         left: 17%;
     }
 
     .P12LD {
         position: absolute;
-        top: 42%;
+        top: 43%;
         left: 4%;
     }
     
 /* END - Positioning Elements */ 
-
 
 /* START - Button types */
 
@@ -182,6 +192,76 @@ font-weight: 400;
 }    
 
 /* END - Button types */
+
+/* START - New Nav Bar */
+
+.container {
+	width: 90%;
+	margin: 0 auto;
+}
+
+header {
+  background: #90ee90;
+}
+
+header::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.logo {
+  float: left;
+  padding: 10px 0;
+}
+
+nav {
+  float: right;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  margin-left: 30px;
+  padding-top: 23px;
+  position: relative;
+}
+
+nav a {
+  color: #424242;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: #424242;
+}
+
+nav a::before {
+  content: '';
+  display: block;
+  height: 5px;
+  background-color: #424242;
+
+  position: absolute;
+  top: 0;
+  width: 0%;
+
+  transition: all ease-in-out 250ms;
+}
+
+nav a:hover::before {
+  width: 100%;
+}
+
+/* END - New Nav Bar */
+
 
 /* START - Loading Animation
 
