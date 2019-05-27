@@ -47,13 +47,6 @@
         line-height: 1.6em;
     }
 
-    .VideoDesc {
-        font-size: 4em;
-        font-weight: 300;
-        width: 70%;
-        height: 20%;
-        
-    }
 
     .HomeSub {
         font-size: 1.35em;
@@ -375,6 +368,6 @@ nav a:hover::before {
   100% {
     top: 0;
   }
-} 
+}
 
 END - Loading Animation */
