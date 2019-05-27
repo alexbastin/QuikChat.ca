@@ -344,7 +344,7 @@
                 var newlikes = oldlikenumber + 1;
                 var tweetid = firebase.database().ref('tweets/' + t).update({likes: newlikes});
                 var likeid = firebase.database().ref('tweets/' + t + "/" + 'userswholiked' + "/" + userId)
-                var newlikeperson = newliker.push({liked: true});
+                var newlikeperson = likeid.push({liked: true});
                     console.log(newlikes);
                 document.getElementById(t + "likes").innerHTML = newlikes;
                 });    
