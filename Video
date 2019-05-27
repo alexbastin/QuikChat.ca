@@ -1,0 +1,6 @@
+<html>
+<head>
+<script type='text/javascript' src='https://cdn.scaledrone.com/scaledrone.min.js'></script> <!-- inhert Scaledrone videochat -->
+        <script src="js/script.js"></script> <!-- inhert script.js code -->
+</head>
+</html>
