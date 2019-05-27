@@ -1,8 +1,12 @@
+// Generate random room name if needed
 if (!location.hash) {
-  location.hash = Math.floor(Math.random() * 0xF).toString(16);
+  location.hash = Math.floor(Math.random() * 0xFFFFFF).toString(16);
 }
 const roomHash = location.hash.substring(1);
+
+// TODO: Replace with your own channel ID
 const drone = new ScaleDrone('XahUzA3WSVmhao2b');
+// Room name needs to be prefixed with 'observable-'
 const roomName = 'observable-' + roomHash;
 const configuration = {
   iceServers: [{
@@ -65,8 +69,11 @@ function startWebRTC(isOfferer) {
   }
 
   // When a remote stream arrives display it in the #remoteVideo element
-  pc.onaddstream = event => {
-    remoteVideo.srcObject = event.stream;
+  pc.ontrack = event => {
+    const stream = event.streams[0];
+    if (!remoteVideo.srcObject || remoteVideo.srcObject.id !== stream.id) {
+      remoteVideo.srcObject = stream;
+    }
   };
 
   navigator.mediaDevices.getUserMedia({
@@ -76,7 +83,7 @@ function startWebRTC(isOfferer) {
     // Display your local video in #localVideo element
     localVideo.srcObject = stream;
     // Add your stream to be sent to the conneting peer
-    pc.addStream(stream);
+    stream.getTracks().forEach(track => pc.addTrack(track, stream));
   }, onError);
 
   // Listen to signaling data from Scaledrone
