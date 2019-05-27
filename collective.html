@@ -37,10 +37,6 @@
                 
         // Check to see if you are logged in
         firebase.auth().onAuthStateChanged(function(user) {
-            if (user == null) {
-                alert("Not logged in.");
-                return;
-            } else {
                 alert("Logged in.");
                 userId = user.uid;
                 name = user.displayName;
