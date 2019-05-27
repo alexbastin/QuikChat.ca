@@ -1,0 +1,165 @@
+<html>
+
+<head>
+	 <link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,500,600,700&display=swap" rel="stylesheet">
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>QuikChat</title>
+        <meta name="description" content="Communicate with friends, family, or anyone else quickly using QuikChat" />
+        <meta name="keywords" content="Quikchat, communicate, talk, video, chat, quick, social media" />
+        <meta name="author" content="RB Technology" />
+        <link rel="shortcut icon" href="favicon.ico">
+        <link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,500,600,700&display=swap" rel="stylesheet">
+        <script type='text/javascript' src='https://cdn.scaledrone.com/scaledrone.min.js'></script> <!-- inhert Scaledrone videochat -->
+        <script src="js/script.js"></script> <!-- inhert script.js code -->
+        <link href="StyleSheet.css" rel="stylesheet" type="text/css">
+</head>
+    
+<body>
+    
+<!-- START - Loader    
+    
+    <div class="wrap"> 
+        <div class="loading">
+            <div class="bounceball"></div>
+                <div class="loadingText">Loading QuikChat.ca</div>
+            </div>
+    </div>
+    
+ END - Loader --> 
+    
+<!-- START - HOME -->       
+    
+    <h1 class="HomeTitle P11LU"><span class="typing"></span></h1>
+    
+    <h2 class="HomeDesc P12LU">QuikChat.ca is revolutionizing the communication industry by providing everyone, everywhere the ability to connect to anyone through a <br> multitude of platforms. </h2>
+    
+    <img class="imgHome P14RU" src="homePic1.png">
+    
+    <script src="jquery.2.min.js"></script>
+    <script src="typed.min.js"></script>
+    <script type="text/javascript">
+        var typed = new Typed('.typing', {
+            strings: ["A communication revolution", "brought to you by. . .", "QuikChat.ca"], 
+            loop: true,
+            typeSpeed: 30,
+            backSpeed: 20,
+            backDelay:1300,
+            
+        });
+    </script>
+    
+    <div class="HomeText P13LD"> <!-- WHAT -->
+        <img class="imgMagGlass" src="magGlass.png" alt="oops, image didn't load ;("> 
+        <h1 class="BoxTitle">What is QuikChat?</h1>
+        <p class="BoxText">QuikChat is a platform that is designed to facilitate and accelerate communcication between friends, family, or anyone else throuhg a variety of methods of interaction.</p>
+    </div>
+    
+    <div class="HomeText P13MD"> <!-- HOW -->
+        <img class="imgCogWheel" src="cogWheel.png" alt="oops, image didn't load ;(">
+        <h1 class="BoxTitle">How to use Quikchat</h1>
+        <p class="BoxText">QuikChat has a plethora of sites to visit; navigate them by using the three-lined button that resides in the top left corner of the screen.</p>
+    </div>
+    
+    <div class="HomeText P13RD"> <!-- ABOUT -->
+        <img class="imgPeople" src="people.png" alt="oops, image didn't load ;(">
+        <h1 class="BoxTitle">About us</h1>
+        <p class="BoxText">QuikChat is a student-run technology startup founded by Alex Bastin and Vikram Rawal. QuikChat was created to fill the gap in the communcation market in computers. </p>
+    </div>
+    
+    <h3 class="HomeSub P12LD">Try out one of our most popular  <br> interaction channels</h3>
+    
+    <a href="VideoChat.html">
+        <button class="btn fourth P16LC">Video Chat</button>
+    </a>
+    
+    <a href="CollectiveChat.html">
+        <button class="btn fourth P16LD">Collective Chat</button>
+    </a>
+    
+<!-- END - HOME -->  
+</body>
+        
+<script>
+    
+   
+    
+    
+/* START - Loading Animation
+    
+    window.addEventListener("load", function(){
+	var wrap = document.getElementById("wrap");
+	document.body.removeChild(wrap);
+});
+    
+    
+    (function ($) {
+
+  var divs = {
+    'ball-pulse': 3,
+    'ball-grid-pulse': 9,
+    'ball-clip-rotate': 1,
+    'ball-clip-rotate-pulse': 2,
+    'square-spin': 1,
+    'ball-clip-rotate-multiple': 2,
+    'ball-pulse-rise': 5,
+    'ball-rotate': 1,
+    'cube-transition': 2,
+    'ball-zig-zag': 2,
+    'ball-zig-zag-deflect': 2,
+    'ball-triangle-path': 3,
+    'ball-scale': 1,
+    'line-scale': 5,
+    'line-scale-party': 4,
+    'ball-scale-multiple': 3,
+    'ball-pulse-sync': 3,
+    'ball-beat': 3,
+    'line-scale-pulse-out': 5,
+    'line-scale-pulse-out-rapid': 5,
+    'ball-scale-ripple': 1,
+    'ball-scale-ripple-multiple': 3,
+    'ball-spin-fade-loader': 8,
+    'line-spin-fade-loader': 8,
+    'triangle-skew-spin': 1,
+    'pacman': 5,
+    'ball-grid-beat': 9,
+    'semi-circle-spin': 1,
+    'ball-scale-random': 3
+  };
+
+  var addDivs = function(n) {
+    var arr = [];
+    for (i = 1; i <= n; i++) {
+      arr.push('<div></div>');
+    }
+    return arr;
+  };
+
+  $.fn.loaders = function() {
+    return this.each(function() {
+      var elem = $(this);
+      $.each(divs, function(key, value) {
+        if (elem.hasClass(key))
+          elem.html(addDivs(value))
+      })
+    });
+  };
+
+  $(function() {
+    $.each(divs, function(key, value) {
+      $('.loader-inner.' + key).html(addDivs(value));
+    })
+  });
+
+}).call(window, window.$ || window.jQuery || window.Zepto);
+    
+    
+    END - Loading Animation */
+    
+    
+    
+</script>    
+    
+    
+</html>
