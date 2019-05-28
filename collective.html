@@ -455,7 +455,7 @@
                     var likebool = snapshot.val().liked;
                     console.log(likebool);
                     if (likebool != true) {
-                         alert('You liked this tweet');
+                         alert('You liked this tweet (snapshot exists)');
                          console.log(t);
                          var y = firebase.database().ref('/tweets/' + t);
                          var parent = y.parent;
@@ -483,7 +483,7 @@
                         alert("Sorry, you can only like a tweet once.");
                     }
                } else {
-                         alert('You liked this tweet');
+                         alert('You liked this tweet (no snapshot)');
                          console.log(t);
                          var y = firebase.database().ref('/tweets/' + t);
                          var parent = y.parent;
