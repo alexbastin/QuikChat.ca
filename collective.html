@@ -449,7 +449,7 @@
 
                 firebase.database().ref('tweets/' + t + "/" + 'userswholiked' + "/" + userId).once('value', function(snapshot) {
                 console.log('tweets/' + t + "/" + 'userswholiked' + "/" + userId);
-                var likebool = snapshot.val();
+                var likebool = snapshot.val().liked;
                 console.log(likebool);
                 if (likebool.toString() !== "true") {
                 alert('You liked this tweet');
