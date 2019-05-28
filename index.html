@@ -292,7 +292,7 @@ html, body {
             console.log("Signing in");
             var provider = new firebase.auth.GoogleAuthProvider();
             firebase.auth().signInWithRedirect(provider).then(function(result) { 
-                window.location.replace("https://vikram-alex-social-media.github.io/FirebaseTest/");
+                console.log("Nope");
             });
         }
     
