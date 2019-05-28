@@ -291,7 +291,7 @@ html, body {
             console.log("Signing in");
             var provider = new firebase.auth.GoogleAuthProvider();
             firebase.auth().signInWithRedirect(provider).then(function(result) { 
-                window.location.replace("https://quikchat.ca/home.html");
+                window.location.replace("home.html");
             });
         }
     
