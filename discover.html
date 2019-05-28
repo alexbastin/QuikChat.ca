@@ -54,15 +54,10 @@
                 name = user.displayName;
                 imageUrl = user.photoURL;
                 email = user.email;
-        
-                firebase.database().ref('/users').once('value').then(function(snapshot) { 
-                var userdata = (snapshot.val());
-                    if (userdata != null) {
-                        dataarray = [userdata]
-                    }
-                });
+                console.log(userId + name + email);
         
         var users = firebase.database().ref('/users').once('value', function(snapshot) {
+        console.log(users);
         for (var u in users) {
             document.getElementById('listofusers').innerHTML = users[u].username;  
             alert(users[u].username);
