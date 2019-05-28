@@ -473,7 +473,7 @@
                          var newlikes = oldlikenumber + 1;
                          var tweetid = firebase.database().ref('tweets/' + t).update({likes: newlikes});
                          var newliker = firebase.database().ref('tweets/' + t + "/" + 'userswholiked' + "/" + userId);
-                         var newlikeperson = newliker.push({liked: true});
+                         var newlikeperson = newliker.update({liked: true});
                          console.log(newlikes);
                          document.getElementById(t + "likes").innerHTML = newlikes;
                          });
@@ -499,7 +499,7 @@
                          var newlikes = oldlikenumber + 1;
                          var tweetid = firebase.database().ref('tweets/' + t).update({likes: newlikes});
                          var newliker = firebase.database().ref('tweets/' + t + "/" + 'userswholiked' + "/" + userId);
-                         var newlikeperson = newliker.push({liked: true});
+                         var newlikeperson = newliker.update({liked: true});
                          console.log(newlikes);
                          document.getElementById(t + "likes").innerHTML = newlikes;
                          });
