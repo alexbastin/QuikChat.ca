@@ -171,7 +171,7 @@
     }   
         
         p {
-            font-size: 1.2em;
+            font-size: 1.0em;
             font-weight: 500;
         }
         
@@ -452,7 +452,7 @@
                 if (snapshot.exists()) {
                     var likebool = snapshot.val().liked;
                     console.log(likebool);
-                    if (likebool !== true) {
+                    if (likebool != true) {
                          alert('You liked this tweet');
                          console.log(t);
                          var y = firebase.database().ref('/tweets/' + t);
