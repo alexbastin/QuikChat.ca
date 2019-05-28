@@ -27,12 +27,12 @@
       <nav>
         <ul>
           <li><a href="home.html">Home</a></li>
-          <li><a href="profile.html">Profile</a></li>
-          <li><a href="discover.html">Discover</a></li>
-          <li><a href="collective.html">Collective</a></li>
+          <li><a href="Profile.html">Profile</a></li>
+          <li><a href="Discover.html">Discover</a></li>
+          <li><a href="Collective.html">Collective</a></li>
           <li><a href="Video.html">Video</a></li>
-          <li><a href="private.html">Private</a></li>
-            <li><a href="employment.html">Employment</a></li>
+          <li><a href="Private.html">Private</a></li>
+            <li><a href="Employment.html">Employment</a></li>
         </ul>
       </nav>
     </div>
@@ -88,10 +88,8 @@
         <br>
         <br>
         <input class="btn fourth edit123 P36RD" id="inputFileToLoad" type="file" onchange="encodeImageFileAsURL();" />
-        <br>
-        <br>
-        <div id="imgTest" style="display:none;"></div>
-        <br>
+        
+    <div id="imgTest" style="display:none;"></div>
         <br>
     <div id="mytweets"></div>
     <br>
@@ -139,15 +137,6 @@
     </body>
 
     <style>
-        
-     table, th, td {
-        border: 2px solid black;
-     }
-        
-     th, td {
-        padding: 5px;
-        text-align: center;
-     }
     
     .VideoDesc {
         font-size: 1.2em;
@@ -167,6 +156,7 @@
         top: 11%;
         left: 9%;
     }
+
     .P32LC {
         position: absolute;
         top: 18%;
@@ -174,7 +164,7 @@
     }   
         
         p {
-            font-size: 1.0em;
+            font-size: 1.2em;
             font-weight: 500;
         }
         
@@ -312,14 +302,14 @@
                     console.log(users[u].profile_picture);
                     console.log(users[u].username);
                     if (data[u][t].img != "") {
-                        mytab = mytab + "<td><img src='" + users[u].profile_picture + "' width='50px'>" + "<br>" + "<br>" + "<button class='" + "seeprofile" + users[u].username + "' id=" + "'seeprofile" + users[u].username + "'>See User Profile</button>" + "<br>" + "<button class='" + "follow" + users[u].username + "' id=" + "'follow " + users[u].username + "' onclick='follow(this.className)'>Follow This User" + "</button>" + "</td>";
+                                                mytab = mytab + "<td><img src='" + users[u].profile_picture + "' width='50px'>" + "<br>" + "<br>" + "<button class='" + "seeprofile" + users[u].username + "' id=" + "'seeprofile" + users[u].username + "'</button>" + "<br>" + "<button class='" + "follow" + users[u].username + "' id=" + "'follow " + users[u].username + "' onclick='follow(this.className)'>Follow This User" + "</button>" + "</td>";
                         mytab = mytab + "<td>" + users[u].username + "</td>";
                         mytab = mytab + "<td>" + data[u][t].tweet + "</td>";
                         mytab = mytab + "<td>" + "<p>" + time + "</p>" + "<p>" + date + "</p>" + "<br><img src='" + data[u][t].img + "' width='300px'></td>";
                         mytab = mytab + "<td><p>Like this tweet</p>" + "<button id='" + u + "/" + t + "' onclick=" + "like(this.id)" + ">Like</button>" + "<p>Likes: </p>" + "<p id='" + u + "/" + t + "likes'" + "'>" + data[u][t].likes + "</p>" + "</td>";
                          
                     } else {
-                        mytab = mytab + "<td><img src='" + users[u].profile_picture + "' width='50px'>" + "<br>" + "<br>" + "<button class='" + "seeprofile" + users[u].username + "' id=" + "'seeprofile" + users[u].username + "'>See User Profile</button>" + "<br>" + "<button class='" + "follow" + users[u].username + "' id=" + "'follow " + users[u].username + "' onclick='follow(this.className)'>Follow This User" + "</button>" + "</td>";
+                                                mytab = mytab + "<td><img src='" + users[u].profile_picture + "' width='50px'>" + "<br>" + "<br>" + "<button class='" + "seeprofile" + users[u].username + "' id=" + "'seeprofile" + users[u].username + "'</button>" + "<br>" + "<button class='" + "follow" + users[u].username + "' id=" + "'follow " + users[u].username + "' onclick='follow(this.className)'>Follow This User" + "</button>" + "</td>";
                         mytab = mytab + "<td>" + users[u].username + "</td>";
                         mytab = mytab + "<td>" + data[u][t].tweet + "</td>";
                         mytab = mytab + "<td>" + "<p>" + time + "</p>" + "<p>" + date + "</p>" + "</td>";
@@ -449,67 +439,76 @@
         
         function like(t) {
             
-
+            /*firebase.database().ref('tweets/' + t).once('value', function (snapshot) {
+                var likesarezero = snapshot.val().likes;
+                if (likesarezero = 0) {
+                    var golike = true;
+                } else {
+                    
+                
                 firebase.database().ref('tweets/' + t + "/" + 'userswholiked' + "/" + userId).once('value', function(snapshot) {
                 console.log('tweets/' + t + "/" + 'userswholiked' + "/" + userId);
-                if (snapshot.exists()) {
-                    var likebool = snapshot.val().liked;
-                    console.log(likebool);
-                    if (likebool != true) {
-                         alert('You liked this tweet');
-                         console.log(t);
-                         var y = firebase.database().ref('/tweets/' + t);
-                         var parent = y.parent;
-                         console.log('Parent: ' + parent);
-                         var res = String(parent);
-                         console.log(res);
-                         var goal = res.substring((res.length - 28), res.length);
-                         console.log(goal);
+                var likebool = snapshot.val();
+                console.log(likebool);
+                if (likebool = "true") {
+                    var golike = false;
+                    alert('Already Liked');
+                }
+                else (golike = true);
+                    
+                if (golike) {
+                alert('You liked this tweet');
+                    console.log(t);
+                var y = firebase.database().ref('/tweets/' + t);
+                var parent = y.parent;
+                    console.log('Parent: ' + parent);
+                var res = String(parent);
+                    console.log(res);
+                var goal = res.substring((res.length - 28), res.length);
+                    console.log(goal);
                         
-                         var oldlikes = document.getElementById(t + "likes").innerHTML;
-                         console.log(oldlikes);
-                         firebase.database().ref('/tweets/'+ t).once('value', function(snapshot) {
-                         console.log("/tweets/" + t);
-                         console.log(snapshot.val());
-                         var oldlikenumber = snapshot.val().likes;
-                         console.log(oldlikenumber);
-                         var newlikes = oldlikenumber + 1;
-                         var tweetid = firebase.database().ref('tweets/' + t).update({likes: newlikes});
-                         var newliker = firebase.database().ref('tweets/' + t + "/" + 'userswholiked' + "/" + userId);
-                         var newlikeperson = newliker.update({liked: true});
-                         console.log(newlikes);
-                         document.getElementById(t + "likes").innerHTML = newlikes;
-                         });
-                    } else {
-                        alert("Sorry, you can only like a tweet once.");
-                    }
-               } else {
-                         alert('You liked this tweet');
-                         console.log(t);
-                         var y = firebase.database().ref('/tweets/' + t);
-                         var parent = y.parent;
-                         console.log('Parent: ' + parent);
-                         var res = String(parent);
-                         console.log(res);
-                         var goal = res.substring((res.length - 28), res.length);
-                         console.log(goal);
+                var oldlikes = document.getElementById(t + "likes").innerHTML;
+                    console.log(oldlikes);
+                firebase.database().ref('/tweets/'+ t).once('value', function(snapshot) {
+                    console.log("/tweets/" + t);
+                    console.log(snapshot.val());
+                var oldlikenumber = snapshot.val().likes;
+                    console.log(oldlikenumber);
+                var newlikes = oldlikenumber + 1;
+                var tweetid = firebase.database().ref('tweets/' + t).update({likes: newlikes});
+                var newliker = firebase.database().ref('tweets/' + t + "/" + 'userswholiked' + "/" + userId);
+                var newlikeperson = newliker.push({liked: true});
+                    console.log(newlikes);
+                document.getElementById(t + "likes").innerHTML = newlikes;
+                });
+            }
+        });
+    }
+    }*/
+                    alert('You liked this tweet');
+                    console.log(t);
+                var y = firebase.database().ref('/tweets/' + t);
+                var parent = y.parent;
+                    console.log('Parent: ' + parent);
+                var res = String(parent);
+                    console.log(res);
+                var goal = res.substring((res.length - 28), res.length);
+                    console.log(goal);
                         
-                         var oldlikes = document.getElementById(t + "likes").innerHTML;
-                         console.log(oldlikes);
-                         firebase.database().ref('/tweets/'+ t).once('value', function(snapshot) {
-                         console.log("/tweets/" + t);
-                         console.log(snapshot.val());
-                         var oldlikenumber = snapshot.val().likes;
-                         console.log(oldlikenumber);
-                         var newlikes = oldlikenumber + 1;
-                         var tweetid = firebase.database().ref('tweets/' + t).update({likes: newlikes});
-                         var newliker = firebase.database().ref('tweets/' + t + "/" + 'userswholiked' + "/" + userId);
-                         var newlikeperson = newliker.update({liked: true});
-                         console.log(newlikes);
-                         document.getElementById(t + "likes").innerHTML = newlikes;
-                         });
-               }
-      });
+                var oldlikes = document.getElementById(t + "likes").innerHTML;
+                    console.log(oldlikes);
+                firebase.database().ref('/tweets/'+ t).once('value', function(snapshot) {
+                    console.log("/tweets/" + t);
+                    console.log(snapshot.val());
+                var oldlikenumber = snapshot.val().likes;
+                    console.log(oldlikenumber);
+                var newlikes = oldlikenumber + 1;
+                var tweetid = firebase.database().ref('tweets/' + t).update({likes: newlikes});
+                var likeid = firebase.database().ref('tweets/' + t + "/" + 'userswholiked' + "/" + userId)
+                var newlikeperson = likeid.push({liked: true});
+                    console.log(newlikes);
+                document.getElementById(t + "likes").innerHTML = newlikes;
+                });    
 }
         
         function follow(follower) {
