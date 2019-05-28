@@ -57,14 +57,12 @@
                 console.log(userId + name + email);
                 
                 firebase.database().ref('/users').once('value').then(function(snapshot) {
-                    var data = (snapshot.val());
+                    var users = (snapshot.val());
                     
                     dataarray = [data]
                     console.log(dataarray);
+                    console.log(dataarray[0].username);
                     
-                    for (var u in dataarray) {
-                        console.log(dataarray[u].username);
-                    }
                 });
                 
              }
