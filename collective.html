@@ -447,11 +447,11 @@
         function like(t) {
             
 
-                firebase.database().ref('tweets/' + t + "/" + 'userswholiked' + "/" + userId).once('value', function(snapshot) {
+                /*firebase.database().ref('tweets/' + t + "/" + 'userswholiked' + "/" + userId).once('value', function(snapshot) {
                 console.log('tweets/' + t + "/" + 'userswholiked' + "/" + userId);
                 var likebool = snapshot.val().liked;
                 console.log(likebool);
-                if (likebool.toString() !== "true") {
+                if (likebool.toString() !== "true") { */
                 alert('You liked this tweet');
                     console.log(t);
                 var y = firebase.database().ref('/tweets/' + t);
@@ -476,8 +476,8 @@
                     console.log(newlikes);
                 document.getElementById(t + "likes").innerHTML = newlikes;
                 });
-            }
-      });
+            //}
+      //});
 }
         
         function follow(follower) {
