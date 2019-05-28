@@ -64,7 +64,8 @@
         
         var users = firebase.database().ref('/users').once('value', function(snapshot) {
         for (var u in users) {
-            document.getElementById('listofusers').innerHTML = users[u].username    
+            document.getElementById('listofusers').innerHTML = users[u].username  
+            alert(users[u].username)
         }
      });
                 
