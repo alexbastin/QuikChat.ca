@@ -450,8 +450,8 @@
         function like(t) {
             
 
-                firebase.database().ref('tweets/' + t + "/" + 'userswholiked' + "/" + userId + "/" + "liked").once('value', function(snapshot) {
-                console.log('tweets/' + t + "/" + 'userswholiked' + "/" + userId + "/" + "liked");
+                firebase.database().ref('tweets/' + t + "/" + 'userswholiked' + "/" + userId).once('value', function(snapshot) {
+                console.log('tweets/' + t + "/" + 'userswholiked' + "/" + userId);
                 if (snapshot.exists()) {
                     var likebool = snapshot.val().liked;
                     console.log(likebool);
@@ -475,7 +475,7 @@
                          console.log(oldlikenumber);
                          var newlikes = oldlikenumber + 1;
                          var tweetid = firebase.database().ref('tweets/' + t).update({likes: newlikes});
-                         var newliker = firebase.database().ref('tweets/' + t + "/" + 'userswholiked' + "/" + userId + "/" + "liked");
+                         var newliker = firebase.database().ref('tweets/' + t + "/" + 'userswholiked' + "/" + userId);
                          var newlikeperson = newliker.update({liked: true});
                          console.log(newlikes);
                          document.getElementById(t + "likes").innerHTML = newlikes;
@@ -503,7 +503,7 @@
                          console.log(oldlikenumber);
                          var newlikes = oldlikenumber + 1;
                          var tweetid = firebase.database().ref('tweets/' + t).update({likes: newlikes});
-                         var newliker = firebase.database().ref('tweets/' + t + "/" + 'userswholiked' + "/" + userId + "/" + "liked");
+                         var newliker = firebase.database().ref('tweets/' + t + "/" + 'userswholiked' + "/" + userId);
                          var newlikeperson = newliker.update({liked: true});
                          console.log(newlikes);
                          document.getElementById(t + "likes").innerHTML = newlikes;
