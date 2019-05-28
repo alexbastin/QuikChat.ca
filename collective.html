@@ -88,7 +88,10 @@
         <br>
         <br>
         <input class="btn fourth edit123 P36RD" id="inputFileToLoad" type="file" onchange="encodeImageFileAsURL();" />
+        <br>
+        <br>
         <div id="imgTest" style="display:none;"></div>
+        <br>
         <br>
     <div id="mytweets"></div>
     <br>
@@ -478,7 +481,7 @@
                          document.getElementById(t + "likes").innerHTML = newlikes;
                          });
                     } else {
-                        alert("You already liked this tweet");
+                        alert("Sorry, you can only like a tweet once.");
                     }
                } else {
                          alert('You liked this tweet');
