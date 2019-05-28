@@ -306,6 +306,7 @@
             
             for (var u in data) {
                 for (var t in data[u]) {
+                    
                     mytab = mytab + "<tr>";
                     var time = data[u][t].time;
                     var date = data[u][t].date;
@@ -455,7 +456,7 @@
                     var likebool = snapshot.val().liked;
                     console.log(likebool);
                     if (likebool != true) {
-                         alert('You liked this tweet (snapshot exists)');
+                         alert('You liked this tweet');
                          console.log(t);
                          var y = firebase.database().ref('/tweets/' + t);
                          var parent = y.parent;
@@ -483,7 +484,7 @@
                         alert("Sorry, you can only like a tweet once.");
                     }
                } else {
-                         alert('You liked this tweet (no snapshot)');
+                         alert('You liked this tweet');
                          console.log(t);
                          var y = firebase.database().ref('/tweets/' + t);
                          var parent = y.parent;
@@ -533,9 +534,16 @@
         
         function getnumberofusers() {
             firebase.database().ref('/users').once('value').then(function(snapshot) { 
+                var usernicknames = snapshot.val();
+                var usernamearray = [usernicknames];
+                for (var u in usernamearray) {
+                    console.log(usernamearray[u].username);
+                }
                 var numberofusers = snapshot.numChildren();
                 document.getElementById('numberofusers').innerHTML = "Number of Users: " + numberofusers;
             });
+            
+            
         }
         
         var userArray = [];
