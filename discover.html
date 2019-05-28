@@ -55,12 +55,12 @@
                 imageUrl = user.photoURL;
                 email = user.email;
                 console.log(userId + name + email);
-        
-        var users = firebase.database().ref('/users').once('value', function(snapshot) {
-        console.log(users);
-        for (var u in users) {
-            document.getElementById('listofusers').innerHTML = users[u].username;  
-            alert(users[u].username);
+                
+                firebase.database().ref('/users').once('value').then(function(snapshot) {
+                    var data = (snapshot.val());
+                    
+                    dataarray = [data]
+                    console.log(dataarray);
         }
      });
                 
