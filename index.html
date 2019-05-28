@@ -18,7 +18,7 @@
     <div class="joinToday">Join QuikChat today.</div>
     
     <a href="home.html">
-        <button class="btn fourth">Sign in with Google</button>
+        <button class="btn fourth" onclick="signin()">Sign in with Google</button>
     </a>
         
     
@@ -272,6 +272,16 @@ html, body {
     
     
 </style>    
+    
+<script>
+    
+         function signin() {
+            console.log("Signing in");
+            var provider = new firebase.auth.GoogleAuthProvider();
+            firebase.auth().signInWithRedirect(provider).then(function(result) { 
+                window.location.replace("https://vikram-alex-social-media.github.io/FirebaseTest/");
+            });
+        }
 
 
 </html>
