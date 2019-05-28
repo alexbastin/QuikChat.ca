@@ -452,7 +452,7 @@
                 if (snapshot.exists()) {
                     var likebool = snapshot.val().liked;
                     console.log(likebool);
-                    if (likebool.toString() !== "true") {
+                    if (likebool !== "true") {
                          alert('You liked this tweet');
                          console.log(t);
                          var y = firebase.database().ref('/tweets/' + t);
