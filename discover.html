@@ -59,7 +59,7 @@
                 firebase.database().ref('/users').once('value').then(function(snapshot) {
                     var users = (snapshot.val());
                     
-                    dataarray = [users]
+                    dataarray = [users];
                     console.log(dataarray);
                     console.log(dataarray[0].username);
                     
