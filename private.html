@@ -1,6 +1,38 @@
 <html>
 
-<header>
+<head>
+	 <link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,500,600,700&display=swap" rel="stylesheet">
+        <meta charset="UTF-8">
+    <script type='text/javascript' src='https://cdn.scaledrone.com/scaledrone.min.js'></script>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>QuikChat | Private Chat</title>
+        <meta name="description" content="Communicate with friends, family, or anyone else quickly using QuikChat" />
+        <meta name="keywords" content="Quikchat, communicate, talk, video, chat, quick, social media" />
+        <meta name="author" content="RB Technology" />
+        <link rel="shortcut icon" href="favicon.ico">
+        <link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,500,600,700&display=swap" rel="stylesheet">
+        <link href="StyleSheet.css" rel="stylesheet" type="text/css">
+</head>
+    
+<body>
+     
+<!-- START - Loader    
+    
+    <div class="wrap"> 
+        <div class="loading">
+            <div class="bounceball"></div>
+                <div class="loadingText">Loading QuikChat.ca</div>
+            </div>
+    </div>
+    
+ END - Loader --> 
+    
+<!-- START - HOME -->       
+    
+     <img class="imgWhiteLogo" src="WhiteLogo.png">
+    
+    <header>
     <div class="container">
       <h1 class="logo"></h1>
     
@@ -8,16 +40,323 @@
       <nav>
         <ul>
           <li><a href="home.html">Home</a></li>
-          <li><a href="profile.html">Profile</a></li>
-          <li><a href="discover.html">Discover</a></li>
+          <li><a href="Profile.html">Profile</a></li>
+          <li><a href="Discover.html">Discover</a></li>
           <li><a href="collective.html">Collective</a></li>
-          <li><a href="video.html">Video</a></li>
-          <li><a href="private.html">Private</a></li>
-          <li><a href="employment.html">Employment</a></li>
+          <li><a href="Video.html">Video</a></li>
+          <li><a href="Private.html">Private</a></li>
+            <li><a href="Employment.html">Employment</a></li>
         </ul>
       </nav>
     </div>
   </header>
     
     
-</html> 
+     <h2 class="OtherTitle P51LU"><span class="typingP"></span></h2>
+    
+    <script src="jquery.2.min.js"></script>
+    <script src="typed.min.js"></script>
+    <script type="text/javascript">
+        var typed = new Typed('.typingP', {
+            strings: ["Private Chat", "Chat with anyone", "In complete privacy", "No data is saved", "Randomly generated usernames"], 
+            loop: true,
+            typeSpeed: 15,
+            backSpeed: 10,
+            backDelay: 1200,
+            
+        });
+    </script>
+    
+    <p class="PrivDesc P52LC">Private chat allows you to have undisturbed, completely private conversiations with friends, family, or anyone else. No private chat data is ever saved, usernames are randomly generated, and your none of your chats are connected to your Google Account. </p>
+    
+    
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+    
+    
+    <div class="members-count">-</div>
+  <div class="members-list">-</div>
+  <div class="messages"></div>
+  <form class="message-form" onsubmit="return false;">
+    <input class="message-form__input" placeholder="Type a message.." type="text"/>
+    <input class="message-form__button" value="Send" type="submit"/>
+  </form>
+  <script src="./script.js"></script>
+    
+    
+    
+    </body>
+    
+    
+    <style>
+    
+    .P51LU{
+        position: absolute;
+        top: 11%;
+        left: 9%;
+    }
+
+    .P52LC {
+        position: absolute;
+        top: 18%;
+        left: 9%;
+    }
+        
+ 
+       
+        
+    .PrivDesc {
+    font-size: 1.2em;
+    font-weight: 300;
+    width: 85%;
+    height: 20%;
+        
+    }
+      
+        
+    .OtherTitle {
+        font-size: 2em;
+        font-weight: 600;
+    }
+    
+     body {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0px;
+      display: flex;
+      flex-direction: column;
+      max-height: 100vh;
+    }
+        
+    .members-count {
+        border: 1px solid #90ee90;
+        padding: 15px;
+        margin-bottom: 15px;
+        width: 50%;
+        position: absolute;
+        left: 25%;
+        top: 35%;
+        border-radius: 10px;
+    }
+        
+        
+        .members-list {
+        border: 1px solid #90ee90;
+        padding: 15px;
+        margin-bottom: 15px;
+        width: 50%;
+        position: absolute;
+        left: 25%;
+        top: 50%;
+        border-radius: 10px;
+            
+            
+            
+        }
+    .messages {
+        border: 1px solid #90ee90;
+        padding: 15px;
+        margin-bottom: 15px;
+        width: 50%;
+        position: absolute;
+        left: 25%;
+        top: 80%;
+        border-radius: 10px;
+        }
+        
+    .messages {
+      flex-shrink: 1;
+      overflow: auto;
+    }
+    .message {
+      padding: 5px 0;
+        
+    }
+    .message .member {
+      display: inline-block;
+       
+    }
+    .member {
+      padding-right: 10px;
+      position: relative;
+        
+    }
+    .message-form {
+      display: flex;
+      flex-shrink: 0;
+        border: 1px solid #90ee90;
+        padding: 15px;
+        margin-bottom: 15px;
+        width: 50%;
+        position: absolute;
+        left: 25%;
+        top: 65%;
+        border-radius: 10px;
+       
+    }
+    .message-form__input {
+      flex-grow: 1;
+      border: 1px solid #dfdfdf;
+      padding: 10px 15px;
+      font-size: 16px;
+        
+    }
+    .message-form__button {
+      margin: 10px;
+        width: 10%;
+       
+    }    
+        
+    </style>
+    
+    <script>
+    
+    // PS! Replace this with your own channel ID
+// If you use this channel ID your app will stop working in the future
+const CLIENT_ID = 'uNjlHk1kzAGEvyNx';
+
+const drone = new ScaleDrone(CLIENT_ID, {
+  data: { // Will be sent out as clientData via events
+    name: getRandomName(),
+    color: getRandomColor(),
+  },
+});
+
+let members = [];
+
+drone.on('open', error => {
+  if (error) {
+    return console.error(error);
+  }
+  console.log('Successfully connected to Scaledrone');
+
+  const room = drone.subscribe('observable-room');
+  room.on('open', error => {
+    if (error) {
+      return console.error(error);
+    }
+    console.log('Successfully joined room');
+  });
+
+  room.on('members', m => {
+    members = m;
+    updateMembersDOM();
+  });
+
+  room.on('member_join', member => {
+    members.push(member);
+    updateMembersDOM();
+  });
+
+  room.on('member_leave', ({id}) => {
+    const index = members.findIndex(member => member.id === id);
+    members.splice(index, 1);
+    updateMembersDOM();
+  });
+
+  room.on('data', (text, member) => {
+    if (member) {
+      addMessageToListDOM(text, member);
+    } else {
+      // Message is from server
+    }
+  });
+});
+
+drone.on('close', event => {
+  console.log('Connection was closed', event);
+});
+
+drone.on('error', error => {
+  console.error(error);
+});
+
+function getRandomName() {
+  const adjs = ["beginner", "novice", "expert", "professional", "ameteur", "god", "terrible", "tryhard"];
+  const nouns = ["coder", "designer", "scrum master", "procrastinator", "copy-paster", "product owner", "base-code-copier"];
+  return (
+    adjs[Math.floor(Math.random() * adjs.length)] +
+    "_" +
+    nouns[Math.floor(Math.random() * nouns.length)]
+  );
+}
+
+function getRandomColor() {
+  return '#' + Math.floor(Math.random() * 0xFFFFFF).toString(16);
+}
+
+//------------- DOM STUFF
+
+const DOM = {
+  membersCount: document.querySelector('.members-count'),
+  membersList: document.querySelector('.members-list'),
+  messages: document.querySelector('.messages'),
+  input: document.querySelector('.message-form__input'),
+  form: document.querySelector('.message-form'),
+};
+
+DOM.form.addEventListener('submit', sendMessage);
+
+function sendMessage() {
+  const value = DOM.input.value;
+  if (value === '') {
+    return;
+  }
+  DOM.input.value = '';
+  drone.publish({
+    room: 'observable-room',
+    message: value,
+  });
+}
+
+function createMemberElement(member) {
+  const { name, color } = member.clientData;
+  const el = document.createElement('div');
+  el.appendChild(document.createTextNode(name));
+  el.className = 'member';
+  el.style.color = color;
+  return el;
+}
+
+function updateMembersDOM() {
+  DOM.membersCount.innerText = `${members.length} users in room:`;
+  DOM.membersList.innerHTML = '';
+  members.forEach(member =>
+    DOM.membersList.appendChild(createMemberElement(member))
+  );
+}
+
+function createMessageElement(text, member) {
+  const el = document.createElement('div');
+  el.appendChild(createMemberElement(member));
+  el.appendChild(document.createTextNode(text));
+  el.className = 'message';
+  return el;
+}
+
+function addMessageToListDOM(text, member) {
+  const el = DOM.messages;
+  const wasTop = el.scrollTop === el.scrollHeight - el.clientHeight;
+  el.appendChild(createMessageElement(text, member));
+  if (wasTop) {
+    el.scrollTop = el.scrollHeight - el.clientHeight;
+  }
+}
+
+    
+    </script>
+    
+    
+    
+</html>
