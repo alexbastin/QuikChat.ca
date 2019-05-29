@@ -222,6 +222,46 @@
     
     <script>
     
+        // test START
+        
+        
+        if (!location.hash) {
+  location.hash = Math.floor(Math.random() * 0xFFFFFF).toString(16);
+}
+const roomHash = location.hash.substring(1);
+
+// TODO: Replace with your own channel ID
+const drone = new ScaleDrone('uNjlHk1kzAGEvyNx');
+// Room name needs to be prefixed with 'observable-'
+const roomName = 'observable-' + roomHash;
+const configuration = {
+  iceServers: [{
+    urls: 'stun:stun.l.google.com:19302'
+  }]
+};
+let room;
+let pc;
+
+
+function onSuccess() {};
+function onError(error) {
+  console.error(error);
+};
+
+drone.on('open', error => {
+  if (error) {
+    return console.error(error);
+  }
+  room = drone.subscribe(roomName);
+  room.on('open', error => {
+    if (error) {
+      onError(error);
+    }
+  });
+        
+        
+        // test END
+        
     // PS! Replace this with your own channel ID
 // If you use this channel ID your app will stop working in the future
 const CLIENT_ID = 'uNjlHk1kzAGEvyNx';
