@@ -521,14 +521,14 @@
         
         function follow(followerid, followerclass) {
             alert('You followed this user');
-            firebase.database.ref(followerid + "/" + "followers" + "/" + userId).once('value').then(function(snapshot) {
+            firebase.database().ref(followerid + "/" + "followers" + "/" + userId).once('value').then(function(snapshot) {
                 console.log(followerid + "/" + "followers" + "/" + userId);
                 if (snapshot.exists()) {
                     var likebool = snapshot.val().following;
                     console.log(followbool);
                     if (followbool != true) {
                          alert('You followed this user');
-                         firebase.database.ref(followerid + "/" + "numberoffollowers").once('value').then(function(snapshot) {
+                         firebase.database().ref(followerid + "/" + "numberoffollowers").once('value').then(function(snapshot) {
                              var oldfollowernumber = snapshot.val();
                              console.log(oldfollowernumber);
                              var newfollowernumber = oldfollowernumber + 1;
@@ -542,7 +542,7 @@
                     }
                } else {
                          alert('You followed this user');
-                         firebase.database.ref(followerid + "/" + "numberoffollowers").once('value').then(function(snapshot) {
+                         firebase.database().ref(followerid + "/" + "numberoffollowers").once('value').then(function(snapshot) {
                              var oldfollowernumber = snapshot.val();
                              console.log(oldfollowernumber);
                              var newfollowernumber = oldfollowernumber + 1;
