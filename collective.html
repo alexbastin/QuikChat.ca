@@ -294,7 +294,6 @@
                     
                     });  
                     firebase.database().ref('/users/' + userId).update({numberoffollowers: 0});
-                    firebase.database().ref('/users/' + userId).update({numberoffollowing: 0});
                  }                                      
             });
         }
@@ -676,5 +675,4 @@
         
     
     </script>
-    
     </html>
