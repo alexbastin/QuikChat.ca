@@ -65,14 +65,14 @@
                     var userarray = [];
                     for (var u in users) {
                         userarray.push(users[u].username + "<br>");
-                        userarray.push("<img src='" + users[u].profile_picture + "' style='width: 50px; border-radius: 50px;" + "<br>" + "<br>");
+                        userarray.push("<img src='" + users[u].profile_picture + "' style='width: 50px; border-radius: 50px;'>" + "<br>" + "<br>");
                     }
                     console.log(userarray);
                     
                     for (var t in userarray) {
                         //var infodiv = "<div id='" + userarray[t] + "'></div>";
                         //document.getElementById(userarray[t]).innerHTML = userarray[t];
-                        userdiv = userdiv + "<div id='" + userarray[t] + "'>" + userarray[t] + "</div>";
+                        userdiv = userdiv + "<div id='" + userarray[t] + userarray[t] + "</div>";
                         
                     }
                     userdiv = userdiv + "</div>";
