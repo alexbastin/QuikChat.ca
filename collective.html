@@ -204,18 +204,8 @@
     messagingSenderId: "976121809263"
   };
   firebase.initializeApp(config);
-      
-      callbacks: {
-          signInSuccessWithAuthResult: function(authResult, redirectUrl) {
-          var user = authResult.user;
-          var userId = user.Uid;
-          var isNewUser = authResult.additionalUserInfo.isNewUser;
-              
-          if (isNewUser) {
-              firebase.database().ref("/users/" + userId + "/" + "numberoffollowers").update({numberoffollowers: 0}); 
-          };
-                
-        // Check to see if you are logged in
+
+         // Check to see if you are logged in
         firebase.auth().onAuthStateChanged(function(user) {
             if (user == null) {
                 alert("Not logged in.");
@@ -240,6 +230,12 @@
                 // write user data to users
                 //writeUserData(userId, name, email, imageUrl);
                 // moved to tweet function
+                
+                firebase.database().ref('/users/' + userId + "/" + "numberoffollowers").once('value').then(function(snapshot) {
+                if (!snapshot.exists()) {
+                    firebase.database().ref('/users/' + userId).update({numberoffollowers: 0});
+                }
+                });
                 
                 firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) { 
                 var fakeusername = snapshot.val().username;
