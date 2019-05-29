@@ -529,7 +529,7 @@
                              console.log(oldfollowernumber);
                              var newfollowernumber = oldfollowernumber + 1;
                              console.log(newfollowernumber);
-                             var followerupdate = firebase.database().ref(followerid + "/" + "numberoffollowers").update({followernumber: newfollowernumber});
+                             var followerupdate = firebase.database().ref(followerid).update({numberoffollowers: newfollowernumber});
                              var newfollower = firebase.database().ref(followerid + "/" + "followers" + "/" + userId);
                              var newfollowperson = newfollower.update({following: true});
                          });
@@ -543,7 +543,7 @@
                              console.log(oldfollowernumber);
                              var newfollowernumber = oldfollowernumber + 1;
                              console.log(newfollowernumber);
-                             var followerupdate = firebase.database().ref(followerid + "/" + "numberoffollowers").update({followernumber: newfollowernumber});
+                             var followerupdate = firebase.database().ref(followerid).update({numberoffollowers: newfollowernumber});
                              var newfollower = firebase.database().ref(followerid + "/" + "followers" + "/" + userId);
                              var newfollowperson = newfollower.update({following: true});
                          });
