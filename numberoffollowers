@@ -578,7 +578,6 @@
                         });
                    }
             });
-            alert ('Followed' + followerid);  
             document.getElementsByClassName(followerclass).innerHTML = "Unfollow This User";
         }
         
