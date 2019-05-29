@@ -204,7 +204,6 @@
     messagingSenderId: "976121809263"
   };
   firebase.initializeApp(config);
-
          // Check to see if you are logged in
         firebase.auth().onAuthStateChanged(function(user) {
             if (user == null) {
@@ -525,12 +524,12 @@
                     console.log(followbool);
                     if (followbool != true) {
                          alert('You followed this user');
-                         firebase.database().ref(followerid).once('value').then(function(snapshot) {
-                             var oldfollowernumber = snapshot.val().followernumber;
+                         firebase.database().ref(followerid + "/" + "numberoffollowers").once('value').then(function(snapshot) {
+                             var oldfollowernumber = snapshot.val();
                              console.log(oldfollowernumber);
                              var newfollowernumber = oldfollowernumber + 1;
                              console.log(newfollowernumber);
-                             var followerupdate = firebase.database().ref(followerid).update({followernumber: newfollowernumber});
+                             var followerupdate = firebase.database().ref(followerid + "/" + "numberoffollowers").update({followernumber: newfollowernumber});
                              var newfollower = firebase.database().ref(followerid + "/" + "followers" + "/" + userId);
                              var newfollowperson = newfollower.update({following: true});
                          });
@@ -539,12 +538,12 @@
                     }
                } else {
                          alert('You followed this user');
-                         firebase.database().ref(followerid).once('value').then(function(snapshot) {
-                             var oldfollowernumber = snapshot.val().followernumber;
+                         firebase.database().ref(followerid + "/" + "numberoffollowers").once('value').then(function(snapshot) {
+                             var oldfollowernumber = snapshot.val();
                              console.log(oldfollowernumber);
                              var newfollowernumber = oldfollowernumber + 1;
                              console.log(newfollowernumber);
-                             var followerupdate = firebase.database().ref(followerid).update({followernumber: newfollowernumber});
+                             var followerupdate = firebase.database().ref(followerid + "/" + "numberoffollowers").update({followernumber: newfollowernumber});
                              var newfollower = firebase.database().ref(followerid + "/" + "followers" + "/" + userId);
                              var newfollowperson = newfollower.update({following: true});
                          });
