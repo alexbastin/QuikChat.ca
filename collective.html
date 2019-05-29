@@ -520,6 +520,7 @@
 }
         
         function follow(followerid, followerclass) {
+            alert('You followed this user');
             firebase.database.ref(followerid + "/" + "followers" + "/" + userId).once('value').then(function(snapshot) {
                 console.log(followerid + "/" + "followers" + "/" + userId);
                 if (snapshot.exists()) {
