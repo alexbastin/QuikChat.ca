@@ -68,9 +68,9 @@
                     console.log(userarray);
                     
                     for (var t in userarray) {
-                        var infodiv = "<div id='" + userarray[t] + "'></div>";
-                        document.getElementById(userarray[t]).innerHTML = userarray[t];
-                        userdiv = userdiv + infodiv;
+                        //var infodiv = "<div id='" + userarray[t] + "'></div>";
+                        //document.getElementById(userarray[t]).innerHTML = userarray[t];
+                        userdiv = userdiv + "<div id='" + userarray[t] + "'>" + userarray[t] + "</div>";
                         
                     }
                     userdiv = userdiv + "</div>";
