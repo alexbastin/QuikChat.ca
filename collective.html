@@ -204,6 +204,16 @@
     messagingSenderId: "976121809263"
   };
   firebase.initializeApp(config);
+      
+      callbacks: {
+          signInSuccessWithAuthResult: function(authResult, redirectUrl) {
+          var user = authResult.user;
+          var userId = user.Uid;
+          var isNewUser = authResult.additionalUserInfo.isNewUser;
+              
+          if (isNewUser) {
+              firebase.database().ref("/users/" + userId + "/" + "numberoffollowers").update({numberoffollowers: 0}); 
+          };
                 
         // Check to see if you are logged in
         firebase.auth().onAuthStateChanged(function(user) {
@@ -514,6 +524,38 @@
 }
         
         function follow(followerid, followerclass) {
+            firebase.database.ref(followerid + "/" + "followers" + "/" + userId).once('value').then(function(snapshot) {
+                console.log(followerid + "/" + "followers" + "/" + userId);
+                if (snapshot.exists()) {
+                    var likebool = snapshot.val().following;
+                    console.log(followbool);
+                    if (followbool != true) {
+                         alert('You followed this user');
+                         firebase.database.ref(followerid + "/" + "numberoffollowers").once('value').then(function(snapshot) {
+                             var oldfollowernumber = snapshot.val();
+                             console.log(oldfollowernumber);
+                             var newfollowernumber = oldfollowernumber + 1;
+                             console.log(newfollowernumber);
+                             var followerupdate = firebase.database().ref(followerid + "/" + "numberoffollowers").update({followernumber: newfollowernumber});
+                             var newfollower = firebase.database().ref(followerid + "/" + "followers" + "/" + userId);
+                             var newfollowperson = newfollower.update({following: true});
+                         });
+                    } else {
+                        alert("Sorry, you've already followed this user");
+                    }
+               } else {
+                         alert('You followed this user');
+                         firebase.database.ref(followerid + "/" + "numberoffollowers").once('value').then(function(snapshot) {
+                             var oldfollowernumber = snapshot.val();
+                             console.log(oldfollowernumber);
+                             var newfollowernumber = oldfollowernumber + 1;
+                             console.log(newfollowernumber);
+                             var followerupdate = firebase.database().ref(followerid + "/" + "numberoffollowers").update({followernumber: newfollowernumber});
+                             var newfollower = firebase.database().ref(followerid + "/" + "followers" + "/" + userId);
+                             var newfollowperson = newfollower.update({following: true});
+                         });
+                   }
+            });
             alert ('Followed' + followerid);  
             document.getElementsByClassName(followerclass).innerHTML = "Unfollow This User";
         }
