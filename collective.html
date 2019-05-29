@@ -531,8 +531,20 @@
                              console.log(newfollowernumber);
                              var followerupdate = firebase.database().ref(followerid).update({numberoffollowers: newfollowernumber});
                              var newfollower = firebase.database().ref(followerid + "/" + "followers" + "/" + userId);
-                             var newfollowperson = newfollower.update({following: true});
+                             var newfollowperson = newfollower.update({following: true});  
                          });
+                        firebase.database().ref("/users/" + userId + "/" + "numberoffollowing").once('value').then(function(snapshot) {
+                            if (!snapshot.exists()) {
+                             var followingupdate = firebase.database().ref("/users/" + userId).update({numberoffollowing: 0});
+                            } else {
+                             var oldfollowingnumber = snapshot.val();
+                             console.log(oldfollowingnumber);
+                             var newfollowingnumber = oldfollowingnumber + 1;
+                             console.log(newfollowingnumber);
+                             var followingupdate = firebase.database().ref("/users/" + userId).update({numberoffollowing: newfollowingnumber});
+                             var followstring = followerid.substring((followerid.length - 28), followerid.length);
+                             var newfollowing = firebase.database().ref("/users/" + userId + "following" + "/" + followstring);
+                             var newfollowingperson = newfollowing.update({following: true});
                     } else {
                         alert("Sorry, you've already followed this user");
                     }
@@ -547,6 +559,18 @@
                              var newfollower = firebase.database().ref(followerid + "/" + "followers" + "/" + userId);
                              var newfollowperson = newfollower.update({following: true});
                          });
+                            firebase.database().ref("/users/" + userId + "/" + "numberoffollowing").once('value').then(function(snapshot) {
+                            if (!snapshot.exists()) {
+                             var followingupdate = firebase.database().ref("/users/" + userId).update({numberoffollowing: 0});
+                            } else {
+                             var oldfollowingnumber = snapshot.val();
+                             console.log(oldfollowingnumber);
+                             var newfollowingnumber = oldfollowingnumber + 1;
+                             console.log(newfollowingnumber);
+                             var followingupdate = firebase.database().ref("/users/" + userId).update({numberoffollowing: newfollowingnumber});
+                             var followstring = followerid.substring((followerid.length - 28), followerid.length);
+                             var newfollowing = firebase.database().ref("/users/" + userId + "following" + "/" + followstring);
+                             var newfollowingperson = newfollowing.update({following: true});
                    }
             });
             alert ('Followed' + followerid);  
