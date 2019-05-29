@@ -26,7 +26,8 @@
     </div>
   </header>
     
-    <p id='listofusers'>List of Users</p>
+    <div id='listofusers' style="text-align: center;">List of Users</div>
+    
     
     <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
@@ -55,14 +56,24 @@
                 imageUrl = user.photoURL;
                 email = user.email;
                 console.log(userId + name + email);
+                var userdiv = "<div id='actuallist' style='text-align: center;'>"
                 
                 firebase.database().ref('/users').once('value').then(function(snapshot) {
                     var users = (snapshot.val());
                     var userarray = [];
                     for (var u in users) {
-                        userarray.push(users[u].username)
+                        userarray.push(users[u].username);
+                        userarray.push(users[u].profile_picture);
                     }
                     console.log(userarray);
+                    
+                    for (var t in userarray) {
+                        var infodiv = "<div id='" + userarray[t] + "'></div>";
+                        document.getElementById(userarray[t]).innerHTML = userarray[t];
+                        userdiv = userdiv + infodiv;
+                        
+                    }
+                    userdiv = userdiv + </div>;
                 });
                 
              }
