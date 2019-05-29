@@ -245,12 +245,6 @@ function onError(error) {
 };
 
 
-  room = drone.subscribe(roomName);
-  room.on('open', error => {
-    if (error) {
-      onError(error);
-    }
-  });
   // We're connected to the room and received an array of 'members'
   // connected to the room (including us). Signaling server is ready.
   room.on('members', members => {
