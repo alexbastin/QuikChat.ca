@@ -230,12 +230,7 @@
                 // write user data to users
                 //writeUserData(userId, name, email, imageUrl);
                 // moved to tweet function
-                
-                firebase.database().ref('/users/' + userId + "/" + "numberoffollowers").once('value').then(function(snapshot) {
-                if (!snapshot.exists()) {
-                    firebase.database().ref('/users/' + userId).update({numberoffollowers: 0});
-                }
-                });
+               
                 
                 firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) { 
                 var fakeusername = snapshot.val().username;
@@ -297,7 +292,9 @@
                         username: name,
                         email: email,
                         profile_picture : imageUrl
+                    
                     });  
+                    firebase.database().ref('/users/' + userId).update({numberoffollowers: 0});
                  }                                      
             });
         }
