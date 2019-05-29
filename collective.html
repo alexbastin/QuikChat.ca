@@ -545,6 +545,8 @@
                              var followstring = followerid.substring((followerid.length - 28), followerid.length);
                              var newfollowing = firebase.database().ref("/users/" + userId + "following" + "/" + followstring);
                              var newfollowingperson = newfollowing.update({following: true});
+                            }
+                        });
                     } else {
                         alert("Sorry, you've already followed this user");
                     }
@@ -571,6 +573,8 @@
                              var followstring = followerid.substring((followerid.length - 28), followerid.length);
                              var newfollowing = firebase.database().ref("/users/" + userId + "following" + "/" + followstring);
                              var newfollowingperson = newfollowing.update({following: true});
+                             }
+                        });
                    }
             });
             alert ('Followed' + followerid);  
