@@ -1,3 +1,4 @@
+
 <html>
     
     <head>
@@ -64,16 +65,9 @@
                     var users = (snapshot.val());
                     var userarray = [];
                     for (var u in users) {
-                        firebase.database().ref('/users/' + userId + "/" + "numberoffollowers").once('value').then(function(snapshot) {
-                            
-                        if (!snapshot.exists() || snapshot.val() = undefined) {
-                            userarray.push(users[u].username + "<br>" + "<br>");
-                            userarray.push("<img src='" + users[u].profile_picture + "' style='width: 100px; border-radius: 50px;'>" + "<br>" + "<br>");
-                            userarray.push("0" + "<br>" + "<br>" + "<br>");
-                        } else {
-                            userarray.push(users[u].username + "<br>" + "<br>");
-                            userarray.push("<img src='" + users[u].profile_picture + "' style='width: 100px; border-radius: 50px;'>" + "<br>" + "<br>");
-                            userarray.push(users[u].numberoffollowers + "<br>" + "<br>" + "<br>");
+                        userarray.push(users[u].username + "<br>" + "<br>");
+                        userarray.push("<img src='" + users[u].profile_picture + "' style='width: 100px; border-radius: 50px;'>" + "<br>" + "<br>");
+                        userarray.push(users[u].numberoffollowers + "<br>" + "<br>" + "<br>");
                     }
                     console.log(userarray);
                     
@@ -100,6 +94,7 @@
     </script>
     
     
+
     
     
 </html> 
