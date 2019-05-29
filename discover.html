@@ -65,7 +65,7 @@
                     var userarray = [];
                     for (var u in users) {
                         userarray.push(users[u].username);
-                        userarray.push(users[u].profile_picture);
+                        userarray.push("img src='" + users[u].profile_picture + "'>");
                     }
                     console.log(userarray);
                     
