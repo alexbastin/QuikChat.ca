@@ -25,8 +25,10 @@
       </nav>
     </div>
   </header>
-    
+    <br>
     <div id='listofusers' style="text-align: center;">List of Users</div>
+    <br>
+    <div id='actual' style="text-align: center;"></div>
     
     
     <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
@@ -74,6 +76,7 @@
                         
                     }
                     userdiv = userdiv + "</div>";
+                    document.getElementById('actual').innerHTML = userdiv;
                 });
                 
              }
