@@ -244,10 +244,7 @@ function onError(error) {
   console.error(error);
 };
 
-drone.on('open', error => {
-  if (error) {
-    return console.error(error);
-  }
+
   room = drone.subscribe(roomName);
   room.on('open', error => {
     if (error) {
